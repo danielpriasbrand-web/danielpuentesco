@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5L6W58SC');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+  <meta name="google-site-verification" content="E8xNqDEqc_hXw3ANF1CYdSQarZJgdikvBQhO0JGVIHI" />
+  <meta name="msvalidate.01" content="19ADBD6529CDA5D40EDB8B2117B46791" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de Posicionamiento en IA — Daniel Puentes · 5 plataformas</title>
+<meta name="description" content="Diagnóstico completo de visibilidad en IA en ChatGPT, Perplexity, Google AI, Copilot y Gemini. Roadmap de acción priorizado. Entrega en 5-10 días.">
+<meta name="author" content="Daniel Puentes Prias">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --cream: #f0eeea;
+    --dark: #0d1f14;
+    --ink: #0f1a0c;
+    --white: #fafafa;
+    --neon: #C8F000;
+    --neon-dim: #B0D800;
+    --neon-bg: rgba(200,240,0,0.08);
+    --neon-border: rgba(200,240,0,0.3);
+    --ink-mid: rgba(15,26,12,0.55);
+    --ink-low: rgba(15,26,12,0.35);
+    --border: rgba(15,26,12,0.12);
+    --border-light: rgba(240,238,234,0.12);
+  }
+
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;}
+
+  /* ─── NAV DARK ─── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 52px;height:64px;display:flex;justify-content:space-between;align-items:center;background:var(--dark);border-bottom:1px solid var(--border-light);}
+  .nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.5px;color:var(--white);text-decoration:none;}
+  .nav-logo span{display:inline-block;background:var(--neon);color:var(--ink);border-radius:4px;padding:1px 6px;margin-left:4px;font-size:12px;font-weight:800;line-height:1.5;letter-spacing:0;}
+  .nav-links{display:flex;gap:2px;}
+  .nav-links a{color:rgba(250,250,250,0.55);text-decoration:none;font-size:13px;font-weight:400;padding:6px 13px;border-radius:6px;transition:all 0.15s;}
+  .nav-links a:hover,.nav-links a.active{background:rgba(250,250,250,0.08);color:var(--white);}
+  .nav-links a.active{font-weight:500;}
+  .nav-cta{background:var(--neon);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;padding:9px 22px;border-radius:8px;text-decoration:none;transition:all 0.2s;}
+  .nav-cta:hover{background:var(--white);transform:translateY(-1px);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:20px;height:1.5px;background:var(--white);}
+  .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--dark);border-bottom:1px solid var(--border-light);flex-direction:column;padding:16px 24px;gap:4px;z-index:99;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:rgba(250,250,250,0.6);text-decoration:none;font-size:15px;padding:10px 12px;border-radius:8px;}
+  .mobile-menu a:hover{background:rgba(250,250,250,0.06);}
+  .mobile-menu .nav-cta{margin-top:8px;text-align:center;display:block;}
+  @media(max-width:900px){.nav-links,nav .nav-cta{display:none;}.nav-hamburger{display:flex;}nav{padding:0 24px !important;}}
+
+  /* ─── SHARED ─── */
+  .section-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
+  .tag-dash{width:20px;height:2px;background:var(--neon);border-radius:1px;}
+  .tag-text{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-mid);font-weight:500;}
+  .tag-text-light{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(250,250,250,0.4);font-weight:500;}
+  h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(26px,3vw,44px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;color:var(--ink);margin-bottom:16px;}
+  h2.light{color:var(--white);}
+  h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-0.3px;}
+
+  /* ─── BUTTONS ─── */
+  .btn-neon{background:var(--neon);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;padding:14px 30px;border-radius:8px;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+  .btn-neon:hover{background:var(--neon-dim);transform:translateY(-2px);box-shadow:0 12px 32px rgba(200,240,0,0.3);}
+  .btn-dark{background:var(--ink);color:var(--neon);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;padding:14px 30px;border-radius:8px;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+  .btn-dark:hover{background:var(--neon);color:var(--ink);transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--ink-mid);border:1px solid var(--border);font-size:14px;font-weight:400;padding:14px 30px;border-radius:8px;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+  .btn-outline:hover{border-color:var(--ink);color:var(--ink);}
+
+  /* ─── FOOTER ─── */
+  footer{background:var(--dark);padding:36px 52px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .footer-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;color:var(--white);text-decoration:none;}
+  .footer-logo span{color:var(--neon);}
+  footer p{font-size:12px;color:rgba(255,255,255,0.3);}
+  footer a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:12px;transition:color 0.2s;}
+  footer a:hover{color:var(--neon);}
+  .footer-links{display:flex;gap:24px;}
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ─── HERO DARK ─── */
+  .page-hero{background:var(--dark);padding:120px 52px 72px;}
+  .page-hero-inner{max-width:1100px;margin:0 auto;}
+  h1.page-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:800;letter-spacing:-2px;line-height:1.05;color:var(--white);margin-bottom:20px;animation:fadeUp 0.7s ease both;}
+  h1.page-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--neon);}
+  .page-sub{font-size:17px;color:rgba(250,250,250,0.5);line-height:1.8;font-weight:300;animation:fadeUp 0.7s 0.1s ease both;max-width:580px;}
+
+  /* ─── MAIN CONTENT LAYOUT (cream) ─── */
+  .main-section{background:var(--cream);padding:88px 52px;}
+  .main-section-inner{max-width:1100px;margin:0 auto;}
+  .auditoria-grid{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start;}
+
+  /* ─── PLATFORMS GRID ─── */
+  .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 48px;}
+  .what-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px;transition:all 0.2s;}
+  .what-card:hover{border-color:var(--neon);box-shadow:0 4px 20px rgba(200,240,0,0.1);}
+  .what-icon{font-size:22px;margin-bottom:10px;display:block;}
+  .what-card h4{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;margin-bottom:5px;}
+  .what-card p{font-size:13px;color:var(--ink-mid);line-height:1.6;margin:0;font-weight:300;}
+
+  /* ─── DELIVERABLES ─── */
+  .deliverables{display:flex;flex-direction:column;gap:0;margin:24px 0;}
+  .deliverable{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border);}
+  .deliverable:last-child{border-bottom:none;}
+  .del-num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:var(--neon);min-width:36px;line-height:1;}
+  .deliverable h4{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;}
+  .deliverable p{font-size:13px;color:var(--ink-mid);font-weight:300;line-height:1.6;margin:0;}
+
+  /* ─── PROCESS ─── */
+  .process-list{display:flex;flex-direction:column;gap:0;}
+  .process-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);transition:padding-left 0.2s;}
+  .process-item:first-child{border-top:1px solid var(--border);}
+  .process-item:hover{padding-left:6px;}
+  .process-num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--neon);font-size:13px;min-width:28px;margin-top:2px;}
+  .process-item h4{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;}
+  .process-item p{font-size:13px;color:var(--ink-mid);font-weight:300;line-height:1.6;margin:0;}
+
+  /* ─── FAQ ─── */
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
+  .faq-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px 24px;transition:border-color 0.2s;}
+  .faq-item:hover{border-color:var(--neon-border);}
+  .faq-item h4{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;}
+  .faq-item p{font-size:13px;color:var(--ink-mid);line-height:1.65;margin:0;font-weight:300;}
+
+  /* ─── STICKY CTA SIDEBAR ─── */
+  .sticky-cta{position:sticky;top:80px;}
+  .cta-card{background:var(--dark);border-radius:10px;padding:32px;}
+  .cta-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--neon);margin-bottom:12px;letter-spacing:-0.5px;}
+  .cta-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:24px;font-weight:300;}
+  .plataformas{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
+  .plat-chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:5px 10px;font-size:11px;color:rgba(255,255,255,0.55);}
+  .cta-btn-full{background:var(--neon);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;padding:14px 24px;border-radius:8px;text-decoration:none;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;}
+  .cta-btn-full:hover{background:var(--neon-dim);transform:translateY(-1px);}
+  .cta-note{font-size:11px;color:rgba(255,255,255,0.3);margin-top:12px;text-align:center;}
+
+  /* ─── PRICING SECTION (dark) ─── */
+  .pricing-section{background:var(--dark);padding:88px 52px;}
+  .pricing-section-inner{max-width:1100px;margin:0 auto;}
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;}
+  .price-card{border-radius:10px;padding:28px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);transition:all 0.25s;}
+  .price-card:hover{border-color:var(--neon-border);background:var(--neon-bg);}
+  .price-card.featured{border-color:var(--neon-border);background:var(--neon-bg);}
+  .price-badge{display:inline-block;background:var(--neon);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:10px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+  .price-name{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.4);display:block;margin-bottom:8px;}
+  .price-card.featured .price-name{color:var(--neon);}
+  .price-amount{font-family:'Bricolage Grotesque',sans-serif;font-size:40px;font-weight:800;letter-spacing:-2px;color:var(--white);display:block;line-height:1;margin-bottom:6px;}
+  .price-from{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:20px;}
+  .price-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:20px 0;}
+  .price-features{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+  .price-feature{font-size:13px;color:rgba(255,255,255,0.5);font-weight:300;display:flex;gap:8px;align-items:flex-start;}
+  .price-feature::before{content:'→';color:var(--neon);font-weight:700;font-family:'Bricolage Grotesque',sans-serif;flex-shrink:0;}
+  .price-cta{background:rgba(255,255,255,0.08);color:var(--white);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;padding:12px 20px;border-radius:6px;text-decoration:none;transition:all 0.2s;display:block;text-align:center;}
+  .price-card.featured .price-cta{background:var(--neon);color:var(--ink);}
+  .price-cta:hover{background:var(--neon);color:var(--ink);}
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:960px){
+    .auditoria-grid{grid-template-columns:1fr;}
+    .sticky-cta{position:static;}
+    .what-grid{grid-template-columns:repeat(2,1fr);}
+    .pricing-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:900px){
+    .main-section,.pricing-section{padding:64px 24px;}
+    .page-hero{padding:100px 24px 56px;}
+    footer{padding:32px 24px !important;flex-direction:column;align-items:flex-start;gap:16px;}
+    .footer-links{flex-wrap:wrap;gap:16px;}
+  }
+  @media(max-width:600px){
+    h1{font-size:clamp(28px,8vw,44px) !important;letter-spacing:-1px !important;}
+    h2{font-size:clamp(22px,6vw,32px) !important;}
+    .what-grid{grid-template-columns:1fr !important;}
+  }
+
+</style>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://danielpuentes.co/auditoria.html">
+  <meta property="og:title" content="Auditoría de Posicionamiento en IA — 5 plataformas | Daniel Puentes">
+  <meta property="og:description" content="Descubre cómo te ven ChatGPT, Perplexity, Google AI, Copilot y Gemini hoy. Reporte completo + roadmap priorizado. Desde 890€.">
+  <meta property="og:image" content="https://danielpuentes.co/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Daniel Puentes — GEO Consultant">
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@danielpuentes">
+  <meta name="twitter:title" content="Auditoría de Posicionamiento en IA — 5 plataformas | Daniel Puentes">
+  <meta name="twitter:description" content="Descubre cómo te ven ChatGPT, Perplexity, Google AI, Copilot y Gemini hoy. Reporte completo + roadmap priorizado. Desde 890€.">
+  <meta name="twitter:image" content="https://danielpuentes.co/assets/og-home.jpg">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://danielpuentes.co/auditoria.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://danielpuentes.co/#person",
+        "name": "Daniel Puentes Prias",
+        "url": "https://danielpuentes.co",
+        "jobTitle": "Consultor de Posicionamiento en IA en Español",
+        "description": "Consultor especializado en posicionamiento en IA para marcas hispanohablantes. Creador del Método E.N.T.I.A.™ 3.0.",
+        "image": "https://danielpuentes.co/assets/daniel-puentes.jpg",
+        "sameAs": ["https://linkedin.com/in/danielpuentesprias","https://youtube.com/@danielpuentes","https://danielpuentes.co"],
+        "address": [
+          {"@type": "PostalAddress","addressLocality": "Barcelona","addressCountry": "ES"},
+          {"@type": "PostalAddress","addressLocality": "Bogotá","addressCountry": "CO"}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://danielpuentes.co/#website",
+        "url": "https://danielpuentes.co",
+        "name": "Daniel Puentes — GEO Consultant",
+        "inLanguage": "es",
+        "publisher": {"@id": "https://danielpuentes.co/#person"}
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://danielpuentes.co/auditoria.html#service",
+        "name": "Auditoría de Posicionamiento en IA — Daniel Puentes",
+        "url": "https://danielpuentes.co/auditoria.html",
+        "provider": {"@id": "https://danielpuentes.co/#person"},
+        "description": "Diagnóstico completo de visibilidad en IA en ChatGPT, Perplexity, Google AI, Copilot y Gemini con roadmap de acción priorizado.",
+        "areaServed": {"@type": "Place","name": "Latinoamérica y España"},
+        "availableLanguage": "Spanish",
+        "offers": [
+          {"@type": "Offer","name": "Auditoría Starter","price": "890","priceCurrency": "EUR"},
+          {"@type": "Offer","name": "Auditoría Completa","price": "1690","priceCurrency": "EUR"},
+          {"@type": "Offer","name": "Auditoría Enterprise","price": "2900","priceCurrency": "EUR"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question","name": "¿Cuánto tarda la auditoría de posicionamiento en IA?","acceptedAnswer": {"@type": "Answer","text": "Entre 5 y 10 días hábiles desde el briefing inicial hasta la sesión de presentación de resultados."}},
+          {"@type": "Question","name": "¿Para qué tipo de empresas es la auditoría?","acceptedAnswer": {"@type": "Answer","text": "Para cualquier marca que quiera entender su visibilidad en IAs — desde startups hasta grandes corporaciones. Sectores más frecuentes: servicios profesionales, tecnología, retail, salud y educación."}},
+          {"@type": "Question","name": "¿Qué incluye la auditoría de posicionamiento en IA?","acceptedAnswer": {"@type": "Answer","text": "Análisis en 5 plataformas de IA (ChatGPT, Perplexity, Google AI, Copilot y Gemini), benchmark competitivo, reporte de visibilidad completo, roadmap de acción priorizado y sesión de presentación de 60 minutos."}},
+          {"@type": "Question","name": "¿Cuánto cuesta una auditoría de posicionamiento en IA?","acceptedAnswer": {"@type": "Answer","text": "Hay tres planes: Starter desde 890€, Completa a 1.690€ y Enterprise desde 2.900€ para grandes marcas o grupos empresariales."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L6W58SC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ─── HERO DARK ─── -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-tag" style="margin-bottom:24px;">
+      <span class="tag-dash"></span>
+      <span class="tag-text-light">Auditoría · Fase E del Método E.N.T.I.A.™</span>
+    </div>
+    <h1 class="page-title">¿Cómo te ven<br>las <em>IAs hoy</em>?</h1>
+    <p class="page-sub">El Método E.N.T.I.A.™ 3.0 empieza siempre por los datos. La Auditoría de Posicionamiento en IA es el diagnóstico más completo disponible en español — y el punto de partida de cualquier estrategia seria.</p>
+  </div>
+</div>
+
+<!-- ─── MAIN CONTENT CREAM ─── -->
+<section class="main-section">
+  <div class="main-section-inner">
+    <div class="auditoria-grid">
+
+      <!-- Columna principal -->
+      <div class="audit-main">
+
+        <!-- Plataformas -->
+        <div class="reveal">
+          <div class="section-tag"><span class="tag-dash"></span><span class="tag-text">Qué incluye</span></div>
+          <h2>5 plataformas de IA.<br>Un diagnóstico completo.</h2>
+          <div class="what-grid">
+            <div class="what-card"><span class="what-icon">🤖</span><h4>ChatGPT</h4><p>Análisis de cómo GPT-4 te menciona, describe y recomienda en tu categoría.</p></div>
+            <div class="what-card"><span class="what-icon">🔍</span><h4>Perplexity AI</h4><p>Evaluación de tu presencia en búsquedas en tiempo real con IA generativa.</p></div>
+            <div class="what-card"><span class="what-icon">✨</span><h4>Google AI Overviews</h4><p>Visibilidad en las respuestas generativas de Google en tu mercado.</p></div>
+            <div class="what-card"><span class="what-icon">💎</span><h4>Microsoft Copilot</h4><p>Presencia en el ecosistema Bing + IA integrada en Office y Edge.</p></div>
+            <div class="what-card"><span class="what-icon">🌟</span><h4>Gemini</h4><p>Evaluación en el modelo de IA de Google y su integración con búsqueda.</p></div>
+            <div class="what-card"><span class="what-icon">📊</span><h4>Análisis comparativo</h4><p>Benchmark contra tus principales competidores en cada plataforma.</p></div>
+          </div>
+        </div>
+
+        <!-- Entregables -->
+        <div class="reveal" style="margin-top:56px;">
+          <div class="section-tag"><span class="tag-dash"></span><span class="tag-text">Entregables</span></div>
+          <h2>Lo que recibes</h2>
+          <div class="deliverables">
+            <div class="deliverable"><span class="del-num">01</span><div><h4>Reporte de visibilidad en IA</h4><p>Documento detallado con capturas, análisis y scoring de tu presencia en cada plataforma.</p></div></div>
+            <div class="deliverable"><span class="del-num">02</span><div><h4>Benchmark competitivo</h4><p>Comparativa directa contra tus 3 principales competidores para identificar oportunidades y gaps.</p></div></div>
+            <div class="deliverable"><span class="del-num">03</span><div><h4>Roadmap de acción priorizado</h4><p>Plan con acciones ordenadas por impacto y dificultad — victorias rápidas primero, listo para ejecutar.</p></div></div>
+            <div class="deliverable"><span class="del-num">04</span><div><h4>Sesión de presentación</h4><p>Videollamada de 60 minutos para revisar resultados, resolver dudas y definir próximos pasos.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Proceso -->
+        <div class="reveal" style="margin-top:56px;">
+          <div class="section-tag"><span class="tag-dash"></span><span class="tag-text">El proceso</span></div>
+          <h2>Cómo funciona</h2>
+          <div class="process-list">
+            <div class="process-item"><span class="process-num">01</span><div><h4>Briefing inicial (30 min)</h4><p>Llamada para entender tu negocio, competidores y objetivos antes de comenzar el análisis.</p></div></div>
+            <div class="process-item"><span class="process-num">02</span><div><h4>Análisis en las 5 plataformas</h4><p>Evaluación sistemática con 50+ consultas por plataforma en contextos reales de búsqueda.</p></div></div>
+            <div class="process-item"><span class="process-num">03</span><div><h4>Elaboración del reporte</h4><p>Documentación de hallazgos, benchmark competitivo y construcción del roadmap priorizado.</p></div></div>
+            <div class="process-item"><span class="process-num">04</span><div><h4>Entrega y presentación</h4><p>Sesión de 60 minutos para revisar el reporte completo y responder preguntas del equipo.</p></div></div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="reveal" style="margin-top:56px;">
+          <div class="section-tag"><span class="tag-dash"></span><span class="tag-text">FAQ</span></div>
+          <h2>Preguntas frecuentes</h2>
+          <div class="faq-list">
+            <div class="faq-item"><h4>¿Cuánto tarda la auditoría?</h4><p>Entre 5 y 10 días hábiles desde el briefing inicial hasta la sesión de presentación de resultados.</p></div>
+            <div class="faq-item"><h4>¿Para qué tipo de empresas es?</h4><p>Para cualquier marca que quiera entender su visibilidad en IAs — desde startups hasta grandes corporaciones. Sectores más frecuentes: servicios profesionales, tecnología, retail, salud y educación.</p></div>
+            <div class="faq-item"><h4>¿Qué necesito para empezar?</h4><p>Solo una llamada de briefing. No necesitas preparar nada técnico — me encargo del análisis completo.</p></div>
+            <div class="faq-item"><h4>¿La auditoría incluye recomendaciones de implementación?</h4><p>Sí. El roadmap incluye acciones específicas, no solo diagnóstico. Si necesitas apoyo para implementar, podemos hablar de un proyecto de consultoría.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar sticky -->
+      <div class="sticky-cta reveal">
+        <div class="cta-card">
+          <h3>Solicita tu Auditoría</h3>
+          <p>Cuéntame sobre tu marca y te respondo en menos de 24 horas con disponibilidad y próximos pasos.</p>
+          <div class="plataformas">
+            <span class="plat-chip">ChatGPT</span>
+            <span class="plat-chip">Perplexity</span>
+            <span class="plat-chip">Google AI</span>
+            <span class="plat-chip">Copilot</span>
+            <span class="plat-chip">Gemini</span>
+          </div>
+          <a href="contacto.html" class="cta-btn-full">Solicitar auditoría →</a>
+          <p class="cta-note">Entrega en 5–10 días hábiles · Sesión de presentación incluida</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING DARK ─── -->
+<section class="pricing-section">
+  <div class="pricing-section-inner">
+    <div class="reveal">
+      <div class="section-tag"><span class="tag-dash"></span><span class="tag-text-light">Planes</span></div>
+      <h2 class="light">Elige el nivel de análisis</h2>
+      <p style="color:rgba(255,255,255,0.45);font-size:16px;font-weight:300;line-height:1.7;max-width:520px;margin-top:8px;">Tres opciones según el tamaño y complejidad de tu marca. Todas incluyen roadmap y sesión de presentación.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <!-- Starter -->
+      <div class="price-card">
+        <span class="price-name">Starter</span>
+        <span class="price-amount">890€</span>
+        <p class="price-from">pago único</p>
+        <hr class="price-divider">
+        <div class="price-features">
+          <span class="price-feature">Análisis en 3 plataformas de IA</span>
+          <span class="price-feature">Benchmark 1 competidor</span>
+          <span class="price-feature">Reporte de visibilidad</span>
+          <span class="price-feature">Roadmap básico</span>
+          <span class="price-feature">Sesión 30 min</span>
+        </div>
+        <a href="contacto.html" class="price-cta">Solicitar →</a>
+      </div>
+      <!-- Completa -->
+      <div class="price-card featured">
+        <span class="price-badge">Más popular</span>
+        <span class="price-name">Completa</span>
+        <span class="price-amount">1.690€</span>
+        <p class="price-from">pago único</p>
+        <hr class="price-divider">
+        <div class="price-features">
+          <span class="price-feature">Análisis en 5 plataformas de IA</span>
+          <span class="price-feature">Benchmark 3 competidores</span>
+          <span class="price-feature">Reporte completo + scoring</span>
+          <span class="price-feature">Roadmap priorizado</span>
+          <span class="price-feature">Sesión 60 min</span>
+        </div>
+        <a href="contacto.html" class="price-cta">Solicitar →</a>
+      </div>
+      <!-- Enterprise -->
+      <div class="price-card">
+        <span class="price-name">Enterprise</span>
+        <span class="price-amount">2.900€</span>
+        <p class="price-from">desde / proyecto</p>
+        <hr class="price-divider">
+        <div class="price-features">
+          <span class="price-feature">Múltiples marcas o mercados</span>
+          <span class="price-feature">Benchmark ampliado 5+ competidores</span>
+          <span class="price-feature">Reporte ejecutivo + técnico</span>
+          <span class="price-feature">Roadmap por áreas</span>
+          <span class="price-feature">2 sesiones de seguimiento</span>
+        </div>
+        <a href="contacto.html" class="price-cta">Solicitar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/nav.js"></script>
+<script>
+  const _obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*80);_obs.unobserve(en.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>_obs.observe(el));
+</script>
+
+</body>
+</html>

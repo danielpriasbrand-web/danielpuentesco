@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Bloquear archivos internos
+Disallow: /blog/PLANTILLA-articulo.html
+
+# Sitemaps
+Sitemap: https://danielpuentes.co/sitemap.xml
+
+# Crawl-delay cortés
+Crawl-delay: 1

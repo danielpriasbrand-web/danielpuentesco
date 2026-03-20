@@ -1,0 +1,739 @@
+<!-- ============================================================
+     LANDING PILAR: Plan lector 2025 – Educación emocional
+     Línea gráfica Panamericana: header negro · cuerpo blanco · naranja
+     Formato VTEX: sin <html>, <head> ni <body>
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "/" },
+        { "@type": "ListItem", "position": 2, "name": "Plan Lector", "item": "/plan-lector-convivencia-escolar/" },
+        { "@type": "ListItem", "position": 3, "name": "Plan lector 2025: Educación emocional en colegios de Colombia" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Plan lector 2025: tendencias en educación emocional en colegios de Colombia",
+      "description": "Guía institucional para docentes, coordinadores y directivos sobre cómo integrar la educación emocional, la convivencia escolar y la salud mental adolescente en el plan lector 2025 mediante literatura juvenil colombiana.",
+      "author": { "@type": "Organization", "name": "Panamericana Editorial" },
+      "publisher": { "@type": "Organization", "name": "Panamericana Editorial" },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-06-01",
+      "keywords": "plan lector, educación emocional, convivencia escolar, literatura juvenil colombiana, bullying, salud mental adolescente, formación en valores, proyectos transversales"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué es el plan lector y cómo se relaciona con la educación emocional?", "acceptedAnswer": { "@type": "Answer", "text": "El plan lector es una estrategia pedagógica institucional que promueve el hábito lector. Cuando se diseña con intención, se convierte en un vehículo para la educación emocional, permitiendo que los estudiantes desarrollen empatía, gestión de emociones y habilidades para la convivencia escolar a través de la identificación con personajes literarios." } },
+        { "@type": "Question", "name": "¿Por qué incluir libros sobre bullying en el plan lector de secundaria?", "acceptedAnswer": { "@type": "Answer", "text": "Incluir títulos que aborden el bullying permite abrir espacios de diálogo estructurado. La literatura juvenil actúa como mediadora: facilita que los estudiantes identifiquen situaciones de acoso, desarrollen habilidades de resolución de conflictos y fortalezcan una cultura de respeto." } },
+        { "@type": "Question", "name": "¿Cómo puede el plan lector apoyar la salud mental adolescente?", "acceptedAnswer": { "@type": "Answer", "text": "La lectura de narrativas que representan experiencias emocionales complejas permite a los adolescentes nombrar y procesar sus propias emociones. Articulado con los proyectos transversales de salud mental del colegio, se convierte en un recurso preventivo que fortalece la resiliencia." } },
+        { "@type": "Question", "name": "¿Qué criterios deben guiar la selección de libros para el plan lector en 2025?", "acceptedAnswer": { "@type": "Answer", "text": "Pertinencia temática y etaria, calidad literaria reconocida, representación de realidades colombianas o latinoamericanas, potencial para generar discusión sobre valores y convivencia, y disponibilidad de materiales de acompañamiento para el docente." } },
+        { "@type": "Question", "name": "¿La literatura juvenil colombiana es adecuada para trabajar formación en valores?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La literatura juvenil colombiana contemporánea aborda con autenticidad temáticas como la identidad, la familia, el conflicto y la justicia social. Su cercanía cultural facilita la identificación y el diálogo reflexivo." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --negro:        #111111;
+    --negro-suave:  #1c1c1c;
+    --naranja:      #F47920;
+    --naranja-dark: #d96500;
+    --naranja-light:#fff3ea;
+    --blanco:       #ffffff;
+    --gris-100:     #f4f4f4;
+    --gris-200:     #e8e8e8;
+    --gris-400:     #aaaaaa;
+    --gris-600:     #666666;
+    --texto:        #1a1a1a;
+    --fuente-display: 'Oswald', sans-serif;
+    --fuente-cuerpo:  'Source Sans 3', sans-serif;
+    --fuente-serif:   'Lora', serif;
+  }
+
+  /* WRAPPER */
+  .pl-wrapper {
+    background: var(--blanco);
+    color: var(--texto);
+    font-family: var(--fuente-cuerpo);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* BREADCRUMB */
+  .pl-breadcrumb {
+    background: var(--negro);
+    padding: 0.7rem 2rem;
+    font-size: 0.75rem;
+    color: var(--gris-400);
+    font-family: var(--fuente-cuerpo);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .pl-breadcrumb a { color: var(--gris-400); text-decoration: none; }
+  .pl-breadcrumb a:hover { color: var(--naranja); }
+  .pl-breadcrumb span { margin: 0 0.4rem; color: var(--naranja); }
+
+  /* HERO */
+  .pl-hero {
+    background: var(--negro);
+    border-bottom: 4px solid var(--naranja);
+    padding: 3.25rem 2rem 2.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .pl-hero::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 35%; height: 100%;
+    background: linear-gradient(135deg, transparent 45%, rgba(244,121,32,0.07) 100%);
+    pointer-events: none;
+  }
+  .pl-hero-kicker {
+    font-family: var(--fuente-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--naranja);
+    margin-bottom: 0.9rem;
+  }
+  .pl-hero h1 {
+    font-family: var(--fuente-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+    font-weight: 700;
+    color: var(--blanco);
+    line-height: 1.15;
+    margin: 0 0 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    max-width: 760px;
+  }
+  .pl-hero h1 em { font-style: normal; color: var(--naranja); }
+  .pl-hero-lead {
+    font-family: var(--fuente-serif);
+    font-size: 1.02rem;
+    color: #c0c0c0;
+    line-height: 1.75;
+    max-width: 680px;
+    margin-bottom: 1.5rem;
+  }
+  .pl-hero-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+  }
+  .pl-hero-tag {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid #333;
+    color: #888;
+    border-radius: 2px;
+  }
+
+  /* BODY LAYOUT */
+  .pl-body {
+    background: var(--blanco);
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    align-items: start;
+  }
+  .pl-main {
+    padding: 2.5rem 2.5rem 3rem 2rem;
+    border-right: 1px solid var(--gris-200);
+  }
+  .pl-sidebar {
+    padding: 2rem 1.5rem;
+    background: var(--blanco);
+  }
+
+  /* SECCIONES */
+  .pl-section { margin-bottom: 3rem; }
+  .pl-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--gris-200);
+  }
+  .pl-section-num {
+    font-family: var(--fuente-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--naranja);
+    opacity: 0.25;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 2.5rem;
+  }
+  .pl-section h2 {
+    font-family: var(--fuente-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--negro);
+    margin: 0;
+  }
+  .pl-section h2 em { font-style: normal; color: var(--naranja); }
+  .pl-section h3 {
+    font-family: var(--fuente-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--naranja);
+    margin: 1.75rem 0 0.4rem;
+    border-left: 3px solid var(--naranja);
+    padding-left: 0.6rem;
+  }
+  .pl-section p {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: var(--gris-600);
+    margin-bottom: 1rem;
+  }
+  .pl-section strong { color: var(--negro); font-weight: 600; }
+  .pl-section a {
+    color: var(--naranja);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244,121,32,0.35);
+  }
+  .pl-section a:hover { color: var(--naranja-dark); }
+
+  /* LISTAS */
+  .pl-list {
+    list-style: none; padding: 0;
+    margin: 0.5rem 0 1rem;
+  }
+  .pl-list li {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    color: var(--gris-600);
+    line-height: 1.75;
+    padding: 0.45rem 0 0.45rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--gris-200);
+  }
+  .pl-list li:last-child { border-bottom: none; }
+  .pl-list li::before {
+    content: '›';
+    position: absolute; left: 0;
+    color: var(--naranja);
+    font-size: 1.15rem; font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .pl-ol {
+    padding: 0; margin: 0.5rem 0 1rem;
+    counter-reset: pl-counter;
+    list-style: none;
+  }
+  .pl-ol li {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    color: var(--gris-600);
+    line-height: 1.75;
+    padding: 0.55rem 0 0.55rem 2.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--gris-200);
+    counter-increment: pl-counter;
+  }
+  .pl-ol li:last-child { border-bottom: none; }
+  .pl-ol li::before {
+    content: counter(pl-counter, decimal-leading-zero);
+    position: absolute; left: 0; top: 0.6rem;
+    color: var(--naranja);
+    font-family: var(--fuente-display);
+    font-size: 0.82rem; font-weight: 700;
+  }
+
+  /* CITA */
+  .pl-quote {
+    border-left: 4px solid var(--naranja);
+    padding: 1rem 1.5rem;
+    background: var(--gris-100);
+    margin: 1.5rem 0;
+  }
+  .pl-quote p {
+    font-family: var(--fuente-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--negro);
+    margin: 0 0 0.4rem;
+    line-height: 1.75;
+  }
+  .pl-quote cite {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.75rem;
+    color: var(--gris-400);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-style: normal;
+  }
+
+  /* DESTAQUE */
+  .pl-destaque {
+    background: var(--naranja-light);
+    border: 1px solid rgba(244,121,32,0.25);
+    border-left: 4px solid var(--naranja);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .pl-destaque-title {
+    font-family: var(--fuente-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--naranja);
+    margin-bottom: 0.5rem;
+  }
+  .pl-destaque p {
+    font-size: 0.92rem !important;
+    color: var(--gris-600) !important;
+    margin: 0 !important;
+    line-height: 1.7 !important;
+  }
+
+  /* BLOQUE PEDAGÓGICO */
+  .pl-pedagogico {
+    background: var(--gris-100);
+    border-left: 4px solid var(--naranja);
+    padding: 1.25rem 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .pl-pedagogico h3 {
+    font-family: var(--fuente-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--negro);
+    margin: 0 0 0.75rem;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* FAQ */
+  .pl-faq-item {
+    border-bottom: 1px solid var(--gris-200);
+    padding: 1.1rem 0;
+  }
+  .pl-faq-item:last-child { border-bottom: none; }
+  .pl-faq-item h3 {
+    font-family: var(--fuente-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--negro);
+    margin: 0 0 0.5rem;
+    border-left: 3px solid var(--naranja);
+    padding-left: 0.6rem;
+  }
+  .pl-faq-item p {
+    font-size: 0.92rem;
+    color: var(--gris-600);
+    margin: 0;
+    line-height: 1.75;
+    font-family: var(--fuente-cuerpo);
+  }
+
+  /* SIDEBAR */
+  .pl-sidebar-block {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gris-200);
+  }
+  .pl-sidebar-block:last-child { border-bottom: none; }
+  .pl-sidebar-title {
+    font-family: var(--fuente-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--naranja);
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--naranja);
+  }
+
+  /* Destinatarios */
+  .pl-dest-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--gris-200);
+  }
+  .pl-dest-item:last-child { border-bottom: none; }
+  .pl-dest-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .pl-dest-text {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.82rem;
+    color: var(--gris-600);
+    line-height: 1.45;
+  }
+  .pl-dest-text strong {
+    display: block;
+    color: var(--negro);
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+
+  /* Stats */
+  .pl-stat {
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gris-200);
+  }
+  .pl-stat:last-child { border-bottom: none; }
+  .pl-stat-num {
+    font-family: var(--fuente-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--naranja);
+    display: block;
+    line-height: 1;
+  }
+  .pl-stat-label {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.72rem;
+    color: var(--gris-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-top: 0.2rem;
+    line-height: 1.3;
+  }
+
+  /* Links sidebar */
+  .pl-link-item {
+    display: block;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--gris-200);
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.83rem;
+    color: var(--gris-600);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .pl-link-item:last-child { border-bottom: none; }
+  .pl-link-item:hover { color: var(--naranja); }
+  .pl-link-item::before { content: '→ '; color: var(--naranja); }
+
+  /* TAGS FOOTER */
+  .pl-tags {
+    background: var(--negro);
+    padding: 1.25rem 2rem;
+    display: flex; flex-wrap: wrap;
+    gap: 0.4rem; align-items: center;
+  }
+  .pl-tags-label {
+    font-family: var(--fuente-display);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-right: 0.25rem;
+  }
+  .pl-tag {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.72rem;
+    text-decoration: none;
+    color: #888;
+    border: 1px solid #333;
+    padding: 0.18rem 0.65rem;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .pl-tag:hover { color: var(--naranja); border-color: var(--naranja); }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .pl-body       { grid-template-columns: 1fr; }
+    .pl-main       { border-right: none; border-bottom: 1px solid var(--gris-200); padding: 2rem 1.25rem; }
+    .pl-sidebar    { padding: 1.5rem 1.25rem; }
+    .pl-hero       { padding: 2.5rem 1.25rem 2rem; }
+    .pl-breadcrumb { padding: 0.6rem 1.25rem; }
+    .pl-tags       { padding: 1.25rem; }
+  }
+</style>
+
+<article class="pl-wrapper" itemscope itemtype="https://schema.org/Article">
+
+  <!-- BREADCRUMB -->
+  <nav class="pl-breadcrumb" aria-label="Ruta de navegación">
+    <a href="/">Inicio</a><span>›</span>
+    <a href="/plan-lector-convivencia-escolar/">Plan Lector</a><span>›</span>
+    <span>Educación emocional 2025</span>
+  </nav>
+
+  <!-- HERO -->
+  <header class="pl-hero">
+    <p class="pl-hero-kicker">Guía institucional · Plan Lector 2025</p>
+    <h1 itemprop="headline">Plan lector 2025: tendencias en <em>educación emocional</em> en colegios de Colombia</h1>
+    <p class="pl-hero-lead">Una guía para docentes, coordinadores y equipos de orientación que buscan articular el hábito lector con la convivencia escolar, la salud mental adolescente y la formación en valores.</p>
+    <div class="pl-hero-tags">
+      <span class="pl-hero-tag">Educación emocional</span>
+      <span class="pl-hero-tag">Convivencia escolar</span>
+      <span class="pl-hero-tag">Bullying</span>
+      <span class="pl-hero-tag">Literatura juvenil colombiana</span>
+      <span class="pl-hero-tag">Proyectos transversales</span>
+    </div>
+  </header>
+
+  <!-- CUERPO BLANCO -->
+  <div class="pl-body">
+
+    <!-- COLUMNA PRINCIPAL -->
+    <main class="pl-main">
+
+      <!-- S1 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">01</span>
+          <h2>Contexto educativo en <em>Colombia 2025</em></h2>
+        </div>
+        <p>El sistema educativo colombiano atraviesa un momento de reconfiguración profunda. Las instituciones enfrentan el triple desafío de recuperar aprendizajes pospandemia, reducir brechas de acceso y responder a una creciente demanda de <strong>formación socioemocional</strong>. El Ministerio de Educación Nacional ha reforzado en sus lineamientos la articulación entre competencias ciudadanas, <strong>proyectos transversales</strong> y ambientes que promuevan el bienestar.</p>
+        <p>En este escenario, el <strong>plan lector</strong> deja de ser un instrumento del área de lenguaje para convertirse en un eje transversal del PEI. La lectura literaria aborda de manera natural las problemáticas más urgentes de la vida escolar: el matoneo, la ansiedad académica, la presión de grupo y los conflictos en la <strong>convivencia escolar</strong>.</p>
+        <p>El ICBF y UNICEF Colombia confirman que las problemáticas de <strong>salud mental adolescente</strong> han aumentado de manera sostenida. El plan lector emerge como herramienta de intervención temprana que los colegios pueden implementar sin requerir infraestructura adicional.</p>
+      </section>
+
+      <!-- S2 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">02</span>
+          <h2>Por qué la <em>educación emocional</em> es tendencia</h2>
+        </div>
+        <p>La educación emocional no es una moda pedagógica: es una respuesta fundamentada en investigación. El modelo de Aprendizaje Socioemocional (SEL) plantea que la autoconciencia, la autorregulación y la empatía son tan determinantes para el éxito académico como el conocimiento disciplinar.</p>
+        <h3>Factores que impulsan la tendencia</h3>
+        <ul class="pl-list">
+          <li><strong>Incremento de casos de bullying</strong> documentados en instituciones públicas y privadas de todo el país.</li>
+          <li><strong>Aumento de diagnósticos de ansiedad y depresión</strong> en población adolescente entre 12 y 17 años.</li>
+          <li><strong>Demanda de padres y comunidades</strong> por una formación en valores más allá de los contenidos académicos.</li>
+          <li><strong>Marcos normativos</strong> como el Sistema Nacional de Convivencia Escolar (Ley 1620) y sus actualizaciones.</li>
+          <li><strong>La literatura como herramienta validada:</strong> estudios recientes confirman que la narrativa de ficción desarrolla empatía y gestión emocional.</li>
+        </ul>
+      </section>
+
+      <!-- S3 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">03</span>
+          <h2>Problemáticas clave en <em>secundaria</em></h2>
+        </div>
+        <h3>Bullying y acoso escolar</h3>
+        <p>El <strong>bullying</strong> afecta tanto a víctimas como a agresores. La literatura juvenil permite al docente crear espacios seguros de reflexión donde los estudiantes analizan roles sin necesidad de exponer situaciones personales. Consulta nuestra <a href="/libros-bullying-secundaria/">selección de libros sobre bullying para secundaria</a>.</p>
+        <h3>Salud mental adolescente</h3>
+        <p>Narrativas que presentan personajes que atraviesan ansiedad, duelo o crisis identitaria ofrecen al lector joven modelos de afrontamiento y al equipo de orientación puntos de entrada para conversaciones más profundas.</p>
+        <h3>Convivencia escolar e identidad</h3>
+        <p>La convivencia implica desarrollar habilidades para relacionarse con la diferencia y resolver desacuerdos de manera constructiva. El <a href="/plan-lector-convivencia-escolar/">plan lector y convivencia escolar</a> pueden articularse a través de textos que exploren diversidad cultural y ciudadanía activa.</p>
+      </section>
+
+      <!-- S4 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">04</span>
+          <h2>Cómo elegir libros para el <em>plan lector</em></h2>
+        </div>
+        <p>La selección bibliográfica es una decisión pedagógica. Los equipos que diseñan el plan lector deben considerar criterios que garanticen pertinencia, calidad y utilidad en el aula.</p>
+        <ol class="pl-ol">
+          <li><strong>Pertinencia temática y etaria:</strong> el tema central debe corresponder a las problemáticas reales de los estudiantes del nivel seleccionado.</li>
+          <li><strong>Calidad literaria:</strong> la complejidad narrativa y los personajes bien construidos enriquecen la discusión pedagógica.</li>
+          <li><strong>Representación colombiana o latinoamericana:</strong> la <a href="/autores-literatura-juvenil-colombiana/">literatura juvenil colombiana</a> ofrece referentes culturalmente cercanos.</li>
+          <li><strong>Potencial para trabajar en valores:</strong> el libro debe habilitar conversaciones sobre respeto, responsabilidad y empatía sin resultar didáctico.</li>
+          <li><strong>Disponibilidad de materiales de acompañamiento:</strong> guías de lectura o secuencias didácticas facilitan la integración en las planeaciones.</li>
+          <li><strong>Accesibilidad:</strong> edición asequible para las familias, considerando la diversidad socioeconómica.</li>
+        </ol>
+        <div class="pl-destaque">
+          <p class="pl-destaque-title">Recomendación para coordinadores académicos</p>
+          <p>Conformar un comité con un docente de lenguaje, un orientador y un representante estudiantil garantiza que el plan lector responda tanto a criterios pedagógicos como a los intereses reales de los lectores.</p>
+        </div>
+      </section>
+
+      <!-- S5 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">05</span>
+          <h2>Rol de la <em>literatura juvenil</em> en la convivencia escolar</h2>
+        </div>
+        <p>La <strong>literatura juvenil colombiana</strong> aborda con solvencia temas como el conflicto armado, la diversidad familiar y las tensiones entre tradición y modernidad. En el marco de los <strong>proyectos transversales</strong>, el plan lector puede convertirse en el hilo conductor que integre distintas áreas alrededor de una experiencia literaria compartida.</p>
+        <div class="pl-quote">
+          <p>La literatura ofrece un espacio de exploración emocional protegido. A través de la identificación con personajes de ficción, los estudiantes exploran emociones intensas sin exponerse directamente.</p>
+          <cite>— Principio de la bibliotherapy aplicada a contextos escolares</cite>
+        </div>
+        <p>El vínculo entre convivencia escolar y plan lector se fortalece cuando los docentes diseñan actividades post-lectura que promuevan la escucha activa, el debate respetuoso y la producción de textos reflexivos.</p>
+      </section>
+
+      <!-- S6 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">06</span>
+          <h2>Recomendaciones <em>estructuradas</em> por perfil</h2>
+        </div>
+        <h3>Directivos y coordinadores académicos</h3>
+        <ul class="pl-list">
+          <li>Incorporar el plan lector con enfoque emocional en el PEI como eje transversal, no como actividad complementaria.</li>
+          <li>Asignar tiempo curricular explícito para la lectura y la discusión literaria en todos los grados de secundaria.</li>
+          <li>Alinear la selección de títulos con el Plan de Mejoramiento Institucional en las dimensiones de convivencia y bienestar.</li>
+        </ul>
+        <h3>Docentes y equipos de área</h3>
+        <ul class="pl-list">
+          <li>Diseñar secuencias didácticas que articulen la lectura con los estándares de competencias ciudadanas del MEN.</li>
+          <li>Integrar estrategias de lectura en voz alta, clubes de lectura y círculos literarios.</li>
+          <li>Establecer protocolos de derivación al equipo de orientación cuando la lectura active situaciones de crisis.</li>
+        </ul>
+        <h3>Equipos de orientación escolar</h3>
+        <ul class="pl-list">
+          <li>Construir un directorio de recursos bibliográficos clasificados por problemática disponible para toda la comunidad.</li>
+          <li>Proponer actividades de lectura compartida en jornadas de orientación y salud mental.</li>
+        </ul>
+      </section>
+
+      <!-- S7 -->
+      <section class="pl-section">
+        <div class="pl-section-header">
+          <span class="pl-section-num">07</span>
+          <h2>Beneficios <em>pedagógicos</em> del plan lector emocional</h2>
+        </div>
+        <h3>Para los estudiantes</h3>
+        <ul class="pl-list">
+          <li><strong>Desarrollo de la empatía</strong> a través de narrativas en primera persona y personajes complejos.</li>
+          <li><strong>Ampliación del vocabulario emocional</strong> para nombrar estados internos con precisión.</li>
+          <li><strong>Fortalecimiento de la resiliencia</strong> mediante modelos literarios de afrontamiento.</li>
+          <li><strong>Prevención del bullying</strong> al reflexionar sobre dinámicas de poder y exclusión.</li>
+          <li><strong>Mejora del rendimiento académico</strong>: el hábito lector impacta la comprensión y el pensamiento crítico.</li>
+        </ul>
+        <h3>Para la institución</h3>
+        <ul class="pl-list">
+          <li>Reducción de los índices de conflictividad cuando el plan lector se articula con las rutas de convivencia.</li>
+          <li>Cumplimiento de los lineamientos del Sistema Nacional de Convivencia Escolar.</li>
+          <li>Posicionamiento como referente en formación integral y educación emocional.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ -->
+      <section class="pl-section" id="faq" aria-label="Preguntas frecuentes">
+        <div class="pl-section-header">
+          <span class="pl-section-num">FAQ</span>
+          <h2>Preguntas <em>frecuentes</em></h2>
+        </div>
+        <div>
+          <div class="pl-faq-item">
+            <h3>¿Qué es el plan lector y cómo se relaciona con la educación emocional?</h3>
+            <p>El plan lector es una estrategia pedagógica institucional que promueve el hábito lector. Cuando se diseña con intención, se convierte en un vehículo para la educación emocional, permitiendo desarrollar empatía, gestión de emociones y habilidades para la convivencia escolar a través de la identificación con personajes literarios.</p>
+          </div>
+          <div class="pl-faq-item">
+            <h3>¿Por qué incluir libros sobre bullying en el plan lector de secundaria?</h3>
+            <p>Permite abrir espacios de diálogo estructurado sobre problemáticas reales. La literatura juvenil actúa como mediadora: facilita que los estudiantes identifiquen situaciones de acoso, desarrollen habilidades de resolución de conflictos y fortalezcan una cultura de respeto.</p>
+          </div>
+          <div class="pl-faq-item">
+            <h3>¿Cómo puede el plan lector apoyar la salud mental adolescente?</h3>
+            <p>La lectura de narrativas que representan experiencias emocionales complejas permite a los adolescentes nombrar y procesar sus propias emociones. Articulado con los proyectos transversales de salud mental, se convierte en un recurso preventivo que fortalece la resiliencia de manera sostenida.</p>
+          </div>
+          <div class="pl-faq-item">
+            <h3>¿Qué criterios deben guiar la selección de libros en 2025?</h3>
+            <p>Pertinencia temática y etaria, calidad literaria reconocida, representación de realidades colombianas, potencial para generar discusión sobre formación en valores y convivencia, y disponibilidad de materiales de acompañamiento para el docente.</p>
+          </div>
+          <div class="pl-faq-item">
+            <h3>¿La literatura juvenil colombiana es adecuada para trabajar formación en valores?</h3>
+            <p>Sí. La literatura juvenil colombiana contemporánea aborda con autenticidad la identidad, la familia, el conflicto y la justicia social. Su cercanía cultural facilita la identificación y el diálogo reflexivo, haciéndola una elección estratégica para los proyectos transversales.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="pl-sidebar" aria-label="Información complementaria">
+
+      <div class="pl-sidebar-block">
+        <p class="pl-sidebar-title">Dirigido a</p>
+        <div class="pl-dest-item">
+          <span class="pl-dest-icon">🎓</span>
+          <div class="pl-dest-text"><strong>Docentes</strong>Lenguaje, ética y ciencias sociales de secundaria</div>
+        </div>
+        <div class="pl-dest-item">
+          <span class="pl-dest-icon">📋</span>
+          <div class="pl-dest-text"><strong>Coordinadores académicos</strong>Diseño del PEI y planeación curricular</div>
+        </div>
+        <div class="pl-dest-item">
+          <span class="pl-dest-icon">🏫</span>
+          <div class="pl-dest-text"><strong>Directivos</strong>Rectores y subdirectores de colegios colombianos</div>
+        </div>
+        <div class="pl-dest-item">
+          <span class="pl-dest-icon">🧠</span>
+          <div class="pl-dest-text"><strong>Orientadores</strong>Equipos de orientación y psicoorientación escolar</div>
+        </div>
+      </div>
+
+      <div class="pl-sidebar-block">
+        <p class="pl-sidebar-title">Contexto en cifras</p>
+        <div class="pl-stat">
+          <span class="pl-stat-num">1 de 3</span>
+          <span class="pl-stat-label">estudiantes colombianos reporta haber vivido acoso escolar</span>
+        </div>
+        <div class="pl-stat">
+          <span class="pl-stat-num">Ley 1620</span>
+          <span class="pl-stat-label">Sistema Nacional de Convivencia Escolar vigente</span>
+        </div>
+        <div class="pl-stat">
+          <span class="pl-stat-num">+30%</span>
+          <span class="pl-stat-label">aumento en consultas de salud mental adolescente (ICBF)</span>
+        </div>
+      </div>
+
+      <div class="pl-sidebar-block">
+        <p class="pl-sidebar-title">Recursos relacionados</p>
+        <a class="pl-link-item" href="/libros-bullying-secundaria/">Libros sobre bullying para secundaria</a>
+        <a class="pl-link-item" href="/autores-literatura-juvenil-colombiana/">Autores de literatura juvenil colombiana</a>
+        <a class="pl-link-item" href="/plan-lector-convivencia-escolar/">Plan lector y convivencia escolar</a>
+      </div>
+
+      <div class="pl-sidebar-block">
+        <p class="pl-sidebar-title">Temas de esta guía</p>
+        <ul class="pl-list" style="margin:0">
+          <li>Plan lector institucional</li>
+          <li>Educación emocional</li>
+          <li>Convivencia escolar</li>
+          <li>Bullying y matoneo</li>
+          <li>Salud mental adolescente</li>
+          <li>Formación en valores</li>
+          <li>Proyectos transversales</li>
+          <li>Literatura juvenil colombiana</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- TAGS FOOTER -->
+  <footer class="pl-tags" aria-label="Etiquetas temáticas">
+    <span class="pl-tags-label">Temas:</span>
+    <a class="pl-tag" href="/plan-lector-convivencia-escolar/">Plan lector</a>
+    <a class="pl-tag" href="/plan-lector-convivencia-escolar/">Educación emocional</a>
+    <a class="pl-tag" href="/plan-lector-convivencia-escolar/">Convivencia escolar</a>
+    <a class="pl-tag" href="/autores-literatura-juvenil-colombiana/">Literatura juvenil colombiana</a>
+    <a class="pl-tag" href="/libros-bullying-secundaria/">Bullying</a>
+    <a class="pl-tag" href="/plan-lector-convivencia-escolar/">Salud mental adolescente</a>
+    <a class="pl-tag" href="/plan-lector-convivencia-escolar/">Formación en valores</a>
+    <a class="pl-tag" href="/plan-lector-convivencia-escolar/">Proyectos transversales</a>
+  </footer>
+
+</article>

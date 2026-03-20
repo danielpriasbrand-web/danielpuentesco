@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5L6W58SC');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Estratégico de Influencia en IA (ENTIA) — Daniel Puentes</title>
+<meta name="description" content="Analiza cómo ChatGPT, Gemini y Perplexity representan tu marca. Share of Model, asociaciones semánticas, autoridad algorítmica. Diagnóstico estratégico para CMOs y founders.">
+<meta name="author" content="Daniel Puentes Prias">
+<link rel="canonical" href="https://danielpuentes.co/diagnostico-entia.html">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #f0eeea;
+    --dark: #0d1f14;
+    --ink: #0f1a0c;
+    --white: #fafafa;
+    --neon: #C8F000;
+    --neon-dim: #B0D800;
+    --neon-bg: rgba(200,240,0,0.07);
+    --neon-border: rgba(200,240,0,0.25);
+    --ink-mid: rgba(15,26,12,0.55);
+    --ink-low: rgba(15,26,12,0.35);
+    --border: rgba(15,26,12,0.11);
+    --border-light: rgba(240,238,234,0.1);
+    --dark-mid: rgba(250,250,250,0.5);
+    --dark-low: rgba(250,250,250,0.3);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 52px; height: 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .nav-logo { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.5px; color: var(--white); text-decoration: none; }
+  .nav-logo span { display: inline-block; background: var(--neon); color: var(--ink); border-radius: 4px; padding: 1px 6px; margin-left: 4px; font-size: 12px; font-weight: 800; line-height: 1.5; }
+  .nav-links { display: flex; gap: 2px; }
+  .nav-links a { color: rgba(250,250,250,0.5); text-decoration: none; font-size: 13px; padding: 6px 13px; border-radius: 6px; transition: all 0.15s; }
+  .nav-links a:hover { background: rgba(250,250,250,0.07); color: var(--white); }
+  .nav-cta { background: var(--neon); color: var(--ink); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 13px; padding: 9px 22px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+  .nav-cta:hover { background: var(--white); transform: translateY(-1px); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 20px; height: 1.5px; background: var(--white); }
+  .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid var(--border-light); flex-direction: column; padding: 16px 24px; gap: 4px; z-index: 99; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(250,250,250,0.6); text-decoration: none; font-size: 15px; padding: 10px 12px; border-radius: 8px; }
+  .mobile-menu .nav-cta { margin-top: 8px; text-align: center; display: block; }
+  @media(max-width:900px) { .nav-links, nav .nav-cta { display: none; } .nav-hamburger { display: flex; } nav { padding: 0 24px; } }
+
+  /* ─── SHARED ─── */
+  .section-tag { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .tag-dash { width: 20px; height: 2px; background: var(--neon); border-radius: 1px; }
+  .tag-text { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-mid); font-weight: 500; }
+  .tag-text-light { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(250,250,250,0.35); font-weight: 500; }
+  h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(26px, 3vw, 44px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 16px; }
+  h2.on-dark { color: var(--white); }
+  h2.on-light { color: var(--ink); }
+
+  /* ─── BUTTONS ─── */
+  .btn-neon { background: var(--neon); color: var(--ink); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; padding: 16px 36px; border-radius: 8px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-neon:hover { background: var(--neon-dim); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(200,240,0,0.3); }
+  .btn-ghost { background: transparent; color: rgba(250,250,250,0.65); border: 1px solid rgba(250,250,250,0.2); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 14px; padding: 15px 32px; border-radius: 8px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-ghost:hover { border-color: var(--neon); color: var(--neon); }
+  .btn-outline-dark { background: transparent; color: var(--ink-mid); border: 1px solid var(--border); font-size: 14px; padding: 14px 30px; border-radius: 8px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-outline-dark:hover { border-color: var(--ink); color: var(--ink); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes waPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.7; } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 1 — HERO
+  ═══════════════════════════════════════ */
+  .hero {
+    background: var(--dark);
+    padding: 140px 52px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(200,240,0,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,240,0,0.2), transparent);
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 80px; align-items: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; animation: fadeUp 0.6s ease both; }
+  .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--neon); }
+  .hero-eyebrow span { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(250,250,250,0.4); font-weight: 500; }
+  h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(38px, 5.5vw, 72px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    line-height: 1.02;
+    color: var(--white);
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--neon); }
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(250,250,250,0.5);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 520px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-support { font-size: 13px; color: rgba(250,250,250,0.3); margin-top: 16px; animation: fadeIn 0.8s 0.5s ease both; }
+
+  /* Hero right — signal card */
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 28px;
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+  .hero-card-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,250,250,0.3); margin-bottom: 20px; display: block; }
+  .signal-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-name { font-size: 13px; color: rgba(250,250,250,0.6); }
+  .signal-bar-wrap { flex: 1; margin: 0 16px; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .signal-bar { height: 100%; border-radius: 2px; background: var(--neon); transition: width 1.5s ease; }
+  .signal-pct { font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 700; color: var(--neon); min-width: 32px; text-align: right; }
+  .hero-card-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: rgba(250,250,250,0.2); text-align: center; }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 2 — EL PROBLEMA
+  ═══════════════════════════════════════ */
+  .problem-section { background: var(--cream); padding: 100px 52px; }
+  .problem-inner { max-width: 1100px; margin: 0 auto; }
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 48px; }
+  .problem-left h2 { color: var(--ink); }
+  .problem-left p { font-size: 16px; color: var(--ink-mid); line-height: 1.8; font-weight: 300; margin-bottom: 20px; }
+  .problem-left p strong { color: var(--ink); font-weight: 500; }
+  .problem-right { display: flex; flex-direction: column; gap: 14px; padding-top: 8px; }
+  .problem-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+  .problem-card:hover { border-left-color: var(--neon); transform: translateX(4px); }
+  .problem-card h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .problem-card p { font-size: 13px; color: var(--ink-mid); line-height: 1.6; margin: 0; font-weight: 300; }
+  .problem-question {
+    margin-top: 40px;
+    padding: 28px 32px;
+    background: var(--dark);
+    border-radius: 10px;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--white);
+    line-height: 1.4;
+  }
+  .problem-question span { color: var(--neon); }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 3 — QUÉ ES ENTIA
+  ═══════════════════════════════════════ */
+  .entia-section { background: var(--dark); padding: 100px 52px; position: relative; overflow: hidden; }
+  .entia-section::before {
+    content: 'ENTIA';
+    position: absolute;
+    right: -40px; bottom: -60px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 280px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    color: rgba(255,255,255,0.02);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .entia-inner { max-width: 1100px; margin: 0 auto; }
+  .entia-intro { max-width: 640px; margin-bottom: 64px; }
+  .entia-intro p { font-size: 17px; color: rgba(250,250,250,0.5); line-height: 1.8; font-weight: 300; margin-top: 16px; }
+  .entia-dims { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .entia-dim {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 32px 28px;
+    transition: all 0.25s;
+  }
+  .entia-dim:hover { background: rgba(200,240,0,0.05); border-color: var(--neon-border); transform: translateY(-4px); }
+  .entia-dim-num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: rgba(250,250,250,0.2); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .entia-dim h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; color: var(--neon); margin-bottom: 12px; letter-spacing: -0.5px; }
+  .entia-dim p { font-size: 14px; color: rgba(250,250,250,0.45); line-height: 1.7; font-weight: 300; margin: 0; }
+  .entia-close { margin-top: 48px; padding: 28px 32px; background: rgba(200,240,0,0.06); border: 1px solid var(--neon-border); border-radius: 10px; }
+  .entia-close p { font-size: 15px; color: rgba(250,250,250,0.6); line-height: 1.7; margin: 0; font-weight: 300; }
+  .entia-close p strong { color: var(--white); font-weight: 500; }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 4 — ENTREGABLES
+  ═══════════════════════════════════════ */
+  .deliverables-section { background: var(--cream); padding: 100px 52px; }
+  .deliverables-inner { max-width: 1100px; margin: 0 auto; }
+  .deliverables-intro { max-width: 580px; margin-bottom: 56px; }
+  .deliverables-intro p { font-size: 16px; color: var(--ink-mid); line-height: 1.8; font-weight: 300; margin-top: 12px; }
+  .deliverables-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .deliverable-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    transition: all 0.2s;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .deliverable-card:hover { border-color: var(--neon); box-shadow: 0 4px 24px rgba(200,240,0,0.1); }
+  .deliverable-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--neon);
+    background: var(--dark);
+    width: 48px; height: 48px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    letter-spacing: -1px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .deliverable-content h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .deliverable-content p { font-size: 13px; color: var(--ink-mid); line-height: 1.65; margin: 0 0 10px; font-weight: 300; }
+  .deliverable-question { font-size: 12px; color: var(--ink-low); font-style: italic; }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 5 — QUÉ RECIBE
+  ═══════════════════════════════════════ */
+  .receives-section { background: var(--dark); padding: 100px 52px; }
+  .receives-inner { max-width: 1100px; margin: 0 auto; }
+  .receives-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 48px; }
+  .receive-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 32px 28px;
+    transition: all 0.25s;
+  }
+  .receive-card:hover { border-color: var(--neon-border); background: rgba(200,240,0,0.04); }
+  .receive-icon { font-size: 28px; margin-bottom: 20px; display: block; }
+  .receive-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+  .receive-card p { font-size: 14px; color: rgba(250,250,250,0.45); line-height: 1.7; margin: 0; font-weight: 300; }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 6 — PARA QUIÉN
+  ═══════════════════════════════════════ */
+  .forwhom-section { background: var(--cream); padding: 100px 52px; }
+  .forwhom-inner { max-width: 1100px; margin: 0 auto; }
+  .forwhom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+  .forwhom-col h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .forwhom-col.yes h3 { color: var(--ink); }
+  .forwhom-col.no h3 { color: var(--ink-mid); }
+  .forwhom-col.yes { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 32px; }
+  .forwhom-col.no { background: transparent; border: 1px solid var(--border); border-radius: 10px; padding: 32px; }
+  .check-icon { width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+  .check-icon.yes { background: var(--neon); color: var(--ink); }
+  .check-icon.no { background: rgba(15,26,12,0.1); color: var(--ink-low); }
+  .forwhom-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-mid); font-weight: 300; line-height: 1.55; }
+  .forwhom-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .forwhom-item::before { content: '→'; color: var(--neon); font-weight: 700; font-family: 'Bricolage Grotesque', sans-serif; flex-shrink: 0; margin-top: 1px; }
+  .forwhom-col.no .forwhom-item::before { color: var(--ink-low); content: '—'; }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 7 — PROCESO
+  ═══════════════════════════════════════ */
+  .process-section { background: var(--dark); padding: 100px 52px; }
+  .process-inner { max-width: 1100px; margin: 0 auto; }
+  .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; position: relative; }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px; left: calc(16.66% + 32px); right: calc(16.66% + 32px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--neon-border), var(--neon-border));
+    z-index: 0;
+  }
+  .process-step { text-align: center; padding: 0 28px; position: relative; z-index: 1; }
+  .step-num {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--dark);
+    border: 2px solid var(--neon-border);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 22px; font-weight: 800;
+    color: var(--neon);
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .step-num::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,240,0,0.1);
+  }
+  .process-step h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  .process-step p { font-size: 14px; color: rgba(250,250,250,0.45); line-height: 1.7; font-weight: 300; }
+  .step-badge { display: inline-block; background: var(--neon-bg); border: 1px solid var(--neon-border); color: var(--neon); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 14px; }
+
+  /* ═══════════════════════════════════════
+     SECCIÓN 8 — CTA FINAL
+  ═══════════════════════════════════════ */
+  .cta-section { background: var(--cream); padding: 100px 52px; }
+  .cta-inner { max-width: 1100px; margin: 0 auto; }
+  .cta-block {
+    background: var(--dark);
+    border-radius: 16px;
+    padding: 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    top: -150px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(200,240,0,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-block h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(28px, 3.5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .cta-block h2 em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--neon); }
+  .cta-block p { font-size: 17px; color: rgba(250,250,250,0.45); line-height: 1.8; max-width: 560px; margin: 0 auto 40px; font-weight: 300; position: relative; }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .cta-close { margin-top: 28px; font-size: 13px; color: rgba(250,250,250,0.25); position: relative; }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--dark); padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .footer-logo { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 16px; color: var(--white); text-decoration: none; }
+  .footer-logo span { color: var(--neon); }
+  footer p { font-size: 12px; color: rgba(255,255,255,0.25); }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+  footer a:hover { color: var(--neon); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:1024px) {
+    .entia-dims { grid-template-columns: repeat(2, 1fr); }
+    .receives-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width:900px) {
+    .hero { padding: 110px 24px 72px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { display: none; }
+    .problem-section, .entia-section, .deliverables-section, .receives-section, .forwhom-section, .process-section, .cta-section { padding: 72px 24px; }
+    .problem-grid, .forwhom-grid { grid-template-columns: 1fr; gap: 40px; }
+    .deliverables-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 40px; }
+    .process-steps::before { display: none; }
+    .process-step { padding: 0; text-align: left; display: flex; gap: 24px; align-items: flex-start; }
+    .process-step .step-num { flex-shrink: 0; margin-bottom: 0; }
+    .cta-block { padding: 48px 28px; border-radius: 12px; }
+    footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-links { flex-wrap: wrap; gap: 16px; }
+  }
+  @media(max-width:600px) {
+    h1 { font-size: clamp(32px, 9vw, 48px) !important; letter-spacing: -1.5px !important; }
+    h2 { font-size: clamp(22px, 6vw, 32px) !important; }
+    .entia-dims, .receives-grid { grid-template-columns: 1fr !important; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions a { width: 100%; text-align: center; justify-content: center; }
+    .cta-actions { flex-direction: column; align-items: center; }
+    .cta-actions a { width: 100%; justify-content: center; }
+  }
+</style>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danielpuentes.co/diagnostico-entia.html">
+<meta property="og:title" content="Diagnóstico Estratégico de Influencia en IA (ENTIA) — Daniel Puentes">
+<meta property="og:description" content="Analiza cómo ChatGPT, Gemini y Perplexity representan tu marca. Share of Model, asociaciones semánticas, Índice de Madurez Algorítmica.">
+<meta property="og:image" content="https://danielpuentes.co/assets/og-home.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Daniel Puentes — GEO Consultant">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://danielpuentes.co/diagnostico-entia.html#service",
+  "name": "Diagnóstico Estratégico de Influencia en IA (ENTIA)",
+  "url": "https://danielpuentes.co/diagnostico-entia.html",
+  "provider": { "@id": "https://danielpuentes.co/#person" },
+  "description": "Análisis estructurado de cómo los principales modelos de lenguaje representan una marca dentro de su categoría. Share of Model, asociaciones semánticas, autoridad algorítmica e Índice de Madurez Algorítmica.",
+  "areaServed": { "@type": "Place", "name": "España y Latinoamérica" },
+  "availableLanguage": "Spanish"
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L6W58SC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 1 — HERO
+═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span>Diagnóstico ENTIA · Método E.N.T.I.A.™ 3.0</span>
+      </div>
+      <h1>Tu marca tiene una<br>reputación en IA.<br><em>¿Sabes cuál es?</em></h1>
+      <p class="hero-sub">ChatGPT, Gemini y Perplexity ya responden preguntas sobre tu categoría. Lo que dicen sobre ti moldea decisiones que nunca llegarán a tu web — y que tus métricas actuales no registran.</p>
+      <div class="hero-actions">
+        <a href="contacto.html" class="btn-neon">Agendar diagnóstico estratégico →</a>
+        <a href="#prediagnostico" class="btn-ghost">Empezar con el prediagnóstico gratuito</a>
+      </div>
+      <p class="hero-support">15 minutos · Sin compromiso · Para revisar tu caso específico</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <span class="hero-card-label">Share of Model — Ejemplo ilustrativo</span>
+        <div class="signal-row">
+          <span class="signal-name">Tu marca</span>
+          <div class="signal-bar-wrap"><div class="signal-bar" style="width:18%" data-width="18"></div></div>
+          <span class="signal-pct">18%</span>
+        </div>
+        <div class="signal-row">
+          <span class="signal-name">Competidor A</span>
+          <div class="signal-bar-wrap"><div class="signal-bar" style="width:54%;background:rgba(255,255,255,0.2)" data-width="54"></div></div>
+          <span class="signal-pct" style="color:rgba(255,255,255,0.35)">54%</span>
+        </div>
+        <div class="signal-row">
+          <span class="signal-name">Competidor B</span>
+          <div class="signal-bar-wrap"><div class="signal-bar" style="width:28%;background:rgba(255,255,255,0.12)" data-width="28"></div></div>
+          <span class="signal-pct" style="color:rgba(255,255,255,0.25)">28%</span>
+        </div>
+        <div class="signal-row" style="border:none;padding-top:16px;margin-top:4px;border-top:1px solid rgba(255,255,255,0.06);">
+          <span class="signal-name" style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.2)">Índice de Madurez</span>
+          <div style="flex:1;margin:0 16px;display:flex;gap:4px;">
+            <div style="height:6px;flex:1;background:var(--neon);border-radius:2px;"></div>
+            <div style="height:6px;flex:1;background:var(--neon);border-radius:2px;opacity:0.6;"></div>
+            <div style="height:6px;flex:1;background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+            <div style="height:6px;flex:1;background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+            <div style="height:6px;flex:1;background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+          </div>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:var(--neon);">2/5</span>
+        </div>
+        <p class="hero-card-footer">Datos ilustrativos · El diagnóstico real analiza tu caso específico</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 2 — EL PROBLEMA
+═══════════════════════════════════════ -->
+<section class="problem-section">
+  <div class="problem-inner">
+    <div class="section-tag">
+      <span class="tag-dash"></span>
+      <span class="tag-text">El problema</span>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-left reveal">
+        <h2 class="on-light">El punto donde se forman las percepciones cambió.<br>Los indicadores que mides, no.</h2>
+        <p>Hay una conversación sobre tu marca que ocurre sin tu participación. Ocurre cuando un decisor le pregunta a una IA quién resuelve mejor un problema que tú resuelves. Cuando un comprador quiere saber qué empresa tiene más autoridad en tu categoría. Cuando alguien busca una recomendación antes de contactar a nadie.</p>
+        <p><strong>Esa conversación ya existe. Su resultado no aparece en Google Analytics.</strong></p>
+        <p>El SEO mide presencia en buscadores — clics, posiciones, tráfico. Es una métrica válida para un canal que sigue funcionando, pero que ya no es el único punto de entrada a una decisión. Los modelos de lenguaje operan con una lógica distinta: no muestran resultados, construyen respuestas. Y la diferencia entre aparecer en esa respuesta y no aparecer no se detecta con las herramientas que tienes hoy.</p>
+        <div class="problem-question">
+          <span>¿Sabes qué posición ocupa tu marca cuando la IA construye una respuesta sobre tu categoría?</span>
+        </div>
+      </div>
+      <div class="problem-right reveal">
+        <div class="problem-card">
+          <h4>No saben si la IA los menciona</h4>
+          <p>La mayoría de las marcas nunca ha comprobado si aparecen en las respuestas de ChatGPT, Gemini o Perplexity sobre su categoría.</p>
+        </div>
+        <div class="problem-card">
+          <h4>No saben con qué atributos las asocia</h4>
+          <p>La IA construye una narrativa sobre tu marca. Si esa narrativa no coincide con tu posicionamiento deseado, estás compitiendo con una versión de ti mismo que no controlas.</p>
+        </div>
+        <div class="problem-card">
+          <h4>No saben qué dice de sus competidores</h4>
+          <p>Si un competidor aparece como referencia de tu categoría con los atributos correctos — y tu marca no — eso tiene consecuencias reales en la percepción del mercado ahora.</p>
+        </div>
+        <div class="problem-card">
+          <h4>Sus métricas actuales no lo miden</h4>
+          <p>GA4, Search Console, rankings de SEO. Ninguna de estas herramientas registra lo que ocurre dentro de los modelos de lenguaje. La brecha de información es estructural.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 3 — QUÉ ES ENTIA
+═══════════════════════════════════════ -->
+<section class="entia-section">
+  <div class="entia-inner">
+    <div class="entia-intro reveal">
+      <div class="section-tag">
+        <span class="tag-dash"></span>
+        <span class="tag-text-light">El diagnóstico</span>
+      </div>
+      <h2 class="on-dark">Un análisis diseñado<br>para lo que el SEO no ve.</h2>
+      <p>El Diagnóstico ENTIA es un sistema de evaluación de posicionamiento en modelos de lenguaje. Analiza cómo los principales sistemas de IA representan tu marca — con qué frecuencia, con qué atributos, con qué autoridad y frente a qué competidores. No es una auditoría de contenidos. Es una lectura estratégica de tu posición en el espacio donde hoy se forman percepciones de alto valor.</p>
+    </div>
+    <div class="entia-dims reveal">
+      <div class="entia-dim">
+        <span class="entia-dim-num">Dimensión 01</span>
+        <h3>Share of Model</h3>
+        <p>La presencia de tu marca en las respuestas que genera la IA sobre tu categoría. Cuánto espacio ocupa tu marca frente a tus competidores en ese espacio de recomendación. Es la métrica central del diagnóstico.</p>
+      </div>
+      <div class="entia-dim">
+        <span class="entia-dim-num">Dimensión 02</span>
+        <h3>Asociaciones semánticas</h3>
+        <p>Los conceptos, atributos y territorios que la IA vincula a tu marca de forma consistente. Cómo te describe cuando no hay nadie instruyéndola. Si esa descripción coincide con el posicionamiento que quieres proyectar — o se aleja de él.</p>
+      </div>
+      <div class="entia-dim">
+        <span class="entia-dim-num">Dimensión 03</span>
+        <h3>Autoridad algorítmica</h3>
+        <p>La solidez de tu posición dentro del modelo: qué tan consistente es tu representación, qué la respalda, qué huecos existen que debilitan tu posición. Una marca puede aparecer sin tener autoridad. La diferencia es estratégicamente relevante.</p>
+      </div>
+    </div>
+    <div class="entia-close reveal">
+      <p>El diagnóstico no revela cómo funciona la IA por dentro. <strong>Revela cómo la IA ve tu marca por fuera</strong> — que es exactamente lo que un decisor necesita saber.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 4 — ENTREGABLES
+═══════════════════════════════════════ -->
+<section class="deliverables-section">
+  <div class="deliverables-inner">
+    <div class="deliverables-intro reveal">
+      <div class="section-tag">
+        <span class="tag-dash"></span>
+        <span class="tag-text">Entregables</span>
+      </div>
+      <h2 class="on-light">Siete dimensiones.<br>Una fotografía completa.</h2>
+      <p>Cada dimensión del diagnóstico responde una pregunta estratégica concreta que tu equipo debería poder responder hoy — y probablemente no puede.</p>
+    </div>
+    <div class="deliverables-grid">
+      <div class="deliverable-card reveal">
+        <div class="deliverable-num">01</div>
+        <div class="deliverable-content">
+          <h4>Share of Model</h4>
+          <p>Cuánto espacio ocupa tu marca en las respuestas de la IA dentro de tu categoría, frente a tus competidores directos. Expresado como posición relativa, no como dato abstracto.</p>
+          <span class="deliverable-question">¿Cuánto terreno ocupa tu marca cuando la IA habla de tu categoría?</span>
+        </div>
+      </div>
+      <div class="deliverable-card reveal">
+        <div class="deliverable-num">02</div>
+        <div class="deliverable-content">
+          <h4>Análisis competitivo en IA</h4>
+          <p>Cómo aparecen tus principales competidores en los modelos. Con qué atributos se les asocia. Dónde están por delante — y dónde hay espacio.</p>
+          <span class="deliverable-question">¿Quién lidera tu categoría dentro del modelo, y por qué?</span>
+        </div>
+      </div>
+      <div class="deliverable-card reveal">
+        <div class="deliverable-num">03</div>
+        <div class="deliverable-content">
+          <h4>Mapa de asociaciones de marca</h4>
+          <p>Los territorios conceptuales que la IA vincula a tu marca de forma consistente. Dónde hay coherencia con tu posicionamiento deseado — y dónde hay desalineación.</p>
+          <span class="deliverable-question">¿Cómo te describe la IA cuando nadie le dice cómo hacerlo?</span>
+        </div>
+      </div>
+      <div class="deliverable-card reveal">
+        <div class="deliverable-num">04</div>
+        <div class="deliverable-content">
+          <h4>Detección de distorsión de marca</h4>
+          <p>Identificación de representaciones incorrectas, desactualizadas o no deseadas que circulan dentro del modelo. Casos en que la IA construye una narrativa que tu equipo no reconocería como propia.</p>
+          <span class="deliverable-question">¿Qué versión de tu marca está distribuyendo la IA sin que lo sepas?</span>
+        </div>
+      </div>
+      <div class="deliverable-card reveal">
+        <div class="deliverable-num">05</div>
+        <div class="deliverable-content">
+          <h4>Análisis de respaldo informativo</h4>
+          <p>Evaluación del tipo de base sobre la que la IA construye su representación de tu marca. Qué tan sólida es esa base y qué vacíos existen que debilitan tu posición en el modelo.</p>
+          <span class="deliverable-question">¿Sobre qué fundamentos descansa tu autoridad en IA?</span>
+        </div>
+      </div>
+      <div class="deliverable-card reveal">
+        <div class="deliverable-num">06</div>
+        <div class="deliverable-content">
+          <h4>Índice de Madurez Algorítmica</h4>
+          <p>Evaluación de tu posición actual en una escala estructurada de madurez — desde la invisibilidad hasta la presencia sólida y coherente. Sitúa el punto de partida y dimensiona el recorrido.</p>
+          <span class="deliverable-question">¿En qué punto del mapa estás hoy?</span>
+        </div>
+      </div>
+      <div class="deliverable-card reveal" style="grid-column: 1 / -1;">
+        <div class="deliverable-num" style="background:var(--neon);color:var(--ink);">07</div>
+        <div class="deliverable-content">
+          <h4>Recomendación estratégica priorizada</h4>
+          <p>Las acciones con mayor potencial de mejora, ordenadas por impacto y viabilidad para tu situación específica. No una lista genérica. Una dirección clara basada en lo que el diagnóstico encontró.</p>
+          <span class="deliverable-question">¿Por dónde empieza tu estrategia de posicionamiento en IA?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 5 — QUÉ RECIBE
+═══════════════════════════════════════ -->
+<section class="receives-section">
+  <div class="receives-inner">
+    <div class="reveal">
+      <div class="section-tag">
+        <span class="tag-dash"></span>
+        <span class="tag-text-light">Formato de entrega</span>
+      </div>
+      <h2 class="on-dark">El diagnóstico termina<br>en una decisión, no en un documento.</h2>
+    </div>
+    <div class="receives-grid">
+      <div class="receive-card reveal">
+        <span class="receive-icon">◎</span>
+        <h3>Sesión estratégica de revisión</h3>
+        <p>Una conversación de trabajo para revisar los hallazgos en contexto. No una presentación de resultados hacia una pantalla — una discusión sobre qué significan para tu negocio específico, tu competencia real y tu momento estratégico.</p>
+      </div>
+      <div class="receive-card reveal">
+        <span class="receive-icon">◻</span>
+        <h3>Resumen ejecutivo</h3>
+        <p>Un documento conciso con los hallazgos clave, la posición competitiva actual y las prioridades de acción. Diseñado para compartirse con dirección o con el equipo sin necesidad de traducción técnica.</p>
+      </div>
+      <div class="receive-card reveal">
+        <span class="receive-icon">◈</span>
+        <h3>Mapa de oportunidades</h3>
+        <p>Una visualización de los espacios donde tu marca puede ganar posición en IA. Los territorios conceptuales sin dueño en tu categoría. Los atributos que tus competidores no están reclamando. El margen real de mejora disponible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 6 — PARA QUIÉN
+═══════════════════════════════════════ -->
+<section class="forwhom-section">
+  <div class="forwhom-inner">
+    <div class="reveal">
+      <div class="section-tag">
+        <span class="tag-dash"></span>
+        <span class="tag-text">Perfil</span>
+      </div>
+      <h2 class="on-light">Este diagnóstico tiene<br>un perfil de cliente preciso.</h2>
+    </div>
+    <div class="forwhom-grid">
+      <div class="forwhom-col yes reveal">
+        <h3><span class="check-icon yes">✓</span> Es para ti si...</h3>
+        <div class="forwhom-item">Tomas decisiones sobre posicionamiento, comunicación o estrategia de contenidos y quieres operar con información completa sobre cómo te percibe el mercado.</div>
+        <div class="forwhom-item">Compites en una categoría donde la percepción de autoridad y la recomendación son factores decisivos: servicios profesionales, tecnología B2B, salud, educación, finanzas, consultoría especializada.</div>
+        <div class="forwhom-item">Ya tienes una estrategia de contenidos activa y quieres saber si está construyendo posición en los nuevos puntos de decisión — o solo en los tradicionales.</div>
+        <div class="forwhom-item">Has escuchado hablar de posicionamiento en IA y quieres una evaluación rigurosa antes de invertir en cambios.</div>
+      </div>
+      <div class="forwhom-col no reveal">
+        <h3><span class="check-icon no">—</span> No es para ti si...</h3>
+        <div class="forwhom-item">Buscas soluciones sin pasar por el análisis. Este diagnóstico es el primer paso de una estrategia — no un atajo hacia resultados inmediatos.</div>
+        <div class="forwhom-item">Tu marca no tiene presencia digital establecida. El análisis trabaja sobre una base que necesita existir para poder evaluarse.</div>
+        <div class="forwhom-item">Esperas garantías de resultado. Lo que entregamos es claridad diagnóstica. Las decisiones que se toman a partir de esa claridad son tuyas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 7 — PROCESO
+═══════════════════════════════════════ -->
+<section class="process-section" id="prediagnostico">
+  <div class="process-inner">
+    <div class="reveal">
+      <div class="section-tag">
+        <span class="tag-dash"></span>
+        <span class="tag-text-light">Cómo funciona</span>
+      </div>
+      <h2 class="on-dark">Tres pasos. Del punto cero<br>a la estrategia clara.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div>
+          <div class="step-num">1</div>
+        </div>
+        <div>
+          <span class="step-badge">Gratis</span>
+          <h3>Prediagnóstico automático</h3>
+          <p>Antes de la conversación, accedes a una primera lectura de tu presencia en IA. En minutos tienes una señal inicial: si apareces, en qué contexto básico, qué tan visible es tu marca frente a tu categoría. Es suficiente para saber si vale la pena profundizar — y generalmente lo es.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div>
+          <div class="step-num">2</div>
+        </div>
+        <div>
+          <span class="step-badge">El núcleo</span>
+          <h3>Diagnóstico estratégico completo</h3>
+          <p>Una vez agendada la reunión, el análisis cubre las siete dimensiones del Diagnóstico ENTIA aplicadas a tu marca, tu categoría y tus competidores específicos. No es un análisis estándar aplicado a cualquier empresa. Es una lectura construida sobre tu caso.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div>
+          <div class="step-num">3</div>
+        </div>
+        <div>
+          <span class="step-badge">Entrega</span>
+          <h3>Sesión de resultados y roadmap</h3>
+          <p>Revisamos los hallazgos juntos. Recibes el resumen ejecutivo, el mapa de oportunidades y la recomendación priorizada. Con eso tienes información suficiente para decidir si actuar, cómo actuar y en qué orden — con o sin nuestra intervención posterior.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECCIÓN 8 — CTA FINAL
+═══════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-block reveal">
+      <h2>No saber cómo te representa la IA<br>no es una posición <em>neutral</em>.<br>Es una desventaja.</h2>
+      <p>Las marcas que están construyendo posición en IA hoy no están esperando a que el mercado se aclare. Están midiendo, entendiendo y actuando mientras la mayoría todavía debate si esto importa.</p>
+      <div class="cta-actions">
+        <a href="contacto.html" class="btn-neon">Agendar diagnóstico estratégico →</a>
+        <a href="#prediagnostico" class="btn-ghost">Empezar con el prediagnóstico gratuito</a>
+      </div>
+      <p class="cta-close">Una conversación de 15 minutos · Sin implementación · Sin compromiso · Solo claridad sobre dónde está tu marca y qué oportunidad tienes delante</p>
+    </div>
+  </div>
+</section>
+
+<script src="/nav.js"></script>
+<script>
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((en, i) => {
+      if (en.isIntersecting) {
+        setTimeout(() => en.target.classList.add('visible'), i * 80);
+        obs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Animate signal bars on scroll
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.querySelectorAll('.signal-bar[data-width]').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+        barObs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  const heroCard = document.querySelector('.hero-card');
+  if (heroCard) {
+    // Reset bars to 0 then animate
+    heroCard.querySelectorAll('.signal-bar[data-width]').forEach(bar => bar.style.width = '0%');
+    setTimeout(() => {
+      heroCard.querySelectorAll('.signal-bar[data-width]').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    }, 800);
+  }
+</script>
+</body>
+</html>
