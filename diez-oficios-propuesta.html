@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Diez Oficios E-commerce</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #fafafa;
+  --bg-muted: #f4f4f5;
+  --border: #e4e4e7;
+  --border-strong: #d1d1d6;
+  --text: #09090b;
+  --text-mid: #52525b;
+  --text-light: #a1a1aa;
+  --accent: #000000;
+  --accent-fg: #ffffff;
+  --blue: #0070f3;
+  --green: #00c951;
+  --radius: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 56px;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.topbar-logo {
+  width: 22px;
+  height: 22px;
+  background: var(--text);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-logo svg { width: 14px; height: 14px; }
+
+.topbar-meta {
+  font-size: 12px;
+  color: var(--text-light);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.topbar-badge {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-mid);
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 32px 64px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-mid);
+  margin-bottom: 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: var(--text-light);
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-mid);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mid);
+  background: var(--bg);
+}
+
+.chip svg { width: 13px; height: 13px; opacity: 0.5; }
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+/* ── SECTION ── */
+.section {
+  padding: 56px 0 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.section-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-light);
+  width: 20px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── CARDS ── */
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-subtle);
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* ── SCOPE GRID ── */
+.scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.scope-item {
+  background: var(--bg);
+  padding: 20px 24px;
+}
+
+.scope-item-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.scope-item-value {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ── PHASE BLOCK ── */
+.phase-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.phase-header {
+  background: var(--bg-subtle);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phase-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  color: var(--text-mid);
+}
+
+.phase-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.phase-time {
+  margin-left: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+.phase-items {
+  padding: 8px 0;
+}
+
+.phase-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+.phase-item:last-child { border-bottom: none; }
+
+.check {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-subtle);
+}
+
+.check svg { width: 9px; height: 9px; }
+
+/* ── TECH STACK ── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tech-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  transition: border-color 0.15s;
+}
+
+.tech-item:hover { border-color: var(--border-strong); }
+
+.tech-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--bg-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.tech-info {}
+.tech-name { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.2; }
+.tech-desc { font-size: 11px; color: var(--text-light); line-height: 1.3; margin-top: 1px; }
+
+/* ── PRICING ── */
+.pricing-card {
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.pricing-header {
+  background: var(--text);
+  padding: 24px;
+  color: var(--accent-fg);
+}
+
+.pricing-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pricing-plan {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.pricing-badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+}
+
+.pricing-amount {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pricing-amount sup {
+  font-size: 18px;
+  font-weight: 500;
+  vertical-align: top;
+  margin-top: 6px;
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.pricing-eur {
+  font-size: 13px;
+  opacity: 0.5;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 4px;
+}
+
+.pricing-body {
+  padding: 24px;
+}
+
+.pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.pricing-row:last-child { border-bottom: none; }
+
+.pricing-row-label { color: var(--text-mid); }
+.pricing-row-value { font-weight: 500; color: var(--text); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+/* ── TIMELINE ── */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 28px;
+  padding-left: 20px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -21px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot.active {
+  border-color: var(--text);
+  background: var(--text);
+}
+
+.timeline-item-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-item-desc {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── PHOTO GUIDE ── */
+.photo-table {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.photo-table th {
+  background: var(--bg-subtle);
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.photo-table td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--text-mid);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.photo-table tr:last-child td { border-bottom: none; }
+
+.photo-table tr:hover td { background: var(--bg-subtle); }
+
+.photo-table td:first-child {
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  width: 180px;
+}
+
+.tag-yes {
+  display: inline-block;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-right: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.tag-no {
+  display: inline-block;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-right: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ── FOOTER ── */
+.doc-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.footer-info {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.8;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.footer-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-note {
+  font-size: 11px;
+  color: var(--text-light);
+  max-width: 280px;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ── ANIMATIONS ── */
+.fade {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 640px) {
+  .topbar { padding: 0 16px; }
+  .hero { padding: 48px 16px 40px; }
+  .main { padding: 0 16px 60px; }
+  .scope-grid, .tech-grid { grid-template-columns: 1fr; }
+  .doc-footer { flex-direction: column; align-items: flex-start; }
+  .footer-note { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <div class="topbar-brand">
+    <div class="topbar-logo">
+      <svg viewBox="0 0 14 14" fill="none">
+        <path d="M7 1L13 12H1L7 1Z" fill="white"/>
+      </svg>
+    </div>
+    Diez Oficios
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span class="topbar-meta">propuesta-ecommerce-v1</span>
+    <span class="topbar-badge">Abril 2026</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero fade">
+  <div class="hero-label">
+    <span class="dot"></span>
+    Propuesta lista para revisión
+  </div>
+  <h1>E-commerce Shopify<br><span>para Diez Oficios</span></h1>
+  <p class="hero-sub">Desarrollo completo con prototipo Figma previo, integración técnica y configuración de analítica. Preparado por Daniel Puentes para Diez Oficios.</p>
+  <div class="hero-chips">
+    <div class="chip">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      Shopify
+    </div>
+    <div class="chip">
+      <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+      Figma Prototipo
+    </div>
+    <div class="chip">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"/><path d="M8 4a.5.5 0 01.5.5v3.793l2.146 2.147a.5.5 0 01-.708.707l-2.293-2.293A.5.5 0 017.5 8.5V4.5A.5.5 0 018 4z"/></svg>
+      18–20 días
+    </div>
+    <div class="chip">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"/></svg>
+      GA4 + Search Console + Clarity
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ALCANCE -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Alcance del proyecto</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-item">
+        <div class="scope-item-label">Catálogo</div>
+        <div class="scope-item-value">6 modelos de bolso · 2–3 colores cada uno · máx. 18 productos</div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-item-label">Páginas</div>
+        <div class="scope-item-value">Home · Colección · Ficha de producto · About · Contacto</div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-item-label">Estética</div>
+        <div class="scope-item-value">Lujo silencioso · editorial · sin intrusión comercial</div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-item-label">Restricciones UX</div>
+        <div class="scope-item-value">Sin pop-ups · sin descuentos · sin timers · checkout limpio</div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-item-label">Contenido visual</div>
+        <div class="scope-item-value">Video integrado en ficha de producto · fotografía real</div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-item-label">Soporte</div>
+        <div class="scope-item-value">30 días post-lanzamiento · documentación para autogestión</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASES -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Fases de desarrollo</span>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-header">
+        <span class="phase-tag">FASE 01</span>
+        <span class="phase-name">Diseño en Figma</span>
+        <span class="phase-time">~6–8 días</span>
+      </div>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Prototipo clickeable: Home, ficha de producto (PDP) y navegación
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Definición de jerarquía visual, ritmo y sensación de marca
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Ronda de refinamiento con feedback del cliente antes de desarrollar
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Sin animaciones complejas: foco en estructura, espaciado y decisiones clave
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-header">
+        <span class="phase-tag">FASE 02</span>
+        <span class="phase-name">Desarrollo Shopify</span>
+        <span class="phase-time">~12–14 días</span>
+      </div>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Conversión del diseño Figma aprobado a Shopify funcional
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Carga de 6 productos con variantes de color y video en PDP
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Configuración de dominio y conexión al servidor
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Checkout limpio, sin pop-ups, sin banners comerciales
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Optimización de velocidad y Core Web Vitals
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          SEO técnico básico configurado desde cero
+        </div>
+        <div class="phase-item">
+          <div class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#52525b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Documentación básica para autogestión + 30 días de soporte
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STACK TÉCNICO -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Integraciones técnicas incluidas</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon">📊</div>
+        <div class="tech-info">
+          <div class="tech-name">Google Analytics 4</div>
+          <div class="tech-desc">Seguimiento de conversiones y comportamiento</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🔍</div>
+        <div class="tech-info">
+          <div class="tech-name">Search Console</div>
+          <div class="tech-desc">Indexación y rendimiento en búsqueda</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🎯</div>
+        <div class="tech-info">
+          <div class="tech-name">Microsoft Clarity</div>
+          <div class="tech-desc">Mapas de calor y grabaciones de sesión</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🛍️</div>
+        <div class="tech-info">
+          <div class="tech-name">Shopify Checkout</div>
+          <div class="tech-desc">Nativo, limpio y optimizado para conversión</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🌐</div>
+        <div class="tech-info">
+          <div class="tech-name">Dominio & Servidor</div>
+          <div class="tech-desc">Configuración completa de DNS y hosting</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">▶️</div>
+        <div class="tech-info">
+          <div class="tech-name">Video en producto</div>
+          <div class="tech-desc">Integración de video en PDP sin apps externas</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📱</div>
+        <div class="tech-info">
+          <div class="tech-name">Mobile First</div>
+          <div class="tech-desc">Diseño optimizado para móvil con versión desktop de alto nivel</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🔗</div>
+        <div class="tech-info">
+          <div class="tech-name">Open Graph y Social Media</div>
+          <div class="tech-desc">Metadatos optimizados para compartir en redes sociales</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🅱️</div>
+        <div class="tech-info">
+          <div class="tech-name">Bing Webmaster Tools</div>
+          <div class="tech-desc">Indexación y rendimiento en el buscador de Microsoft</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📡</div>
+        <div class="tech-info">
+          <div class="tech-name">Píxeles de pauta</div>
+          <div class="tech-desc">Instalación de Meta Pixel, TikTok Pixel y Google Ads según canales activos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRECIO -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Inversión</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="pricing-header-top">
+          <span class="pricing-plan">Proyecto completo</span>
+          <span class="pricing-badge">Figma + Shopify + Analítica</span>
+        </div>
+        <div class="pricing-amount"><sup>$</sup>9.378.600</div>
+        <div class="pricing-eur">≈ 2.200 EUR · TRM referencia: $4.263/EUR</div>
+      </div>
+      <div class="pricing-body">
+        <div class="pricing-row">
+          <span class="pricing-row-label">Prototipo Figma (Fase 1)</span>
+          <span class="pricing-row-value">Incluido</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">Desarrollo Shopify completo (Fase 2)</span>
+          <span class="pricing-row-value">Incluido</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">Configuración GA4 + Search Console + Clarity</span>
+          <span class="pricing-row-value">Incluido</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">Configuración de dominio y servidor</span>
+          <span class="pricing-row-value">Incluido</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">SEO técnico básico</span>
+          <span class="pricing-row-value">Incluido</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">Soporte post-lanzamiento</span>
+          <span class="pricing-row-value">30 días</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">Tiempo de entrega estimado</span>
+          <span class="pricing-row-value">18 – 20 días hábiles</span>
+        </div>
+        <div class="pricing-row" style="background:var(--bg-subtle);">
+          <span class="pricing-row-label" style="font-weight:600;color:var(--text);">Abono para iniciar (50%)</span>
+          <span class="pricing-row-value" style="color:var(--text);font-size:13px;">$4.689.300 COP</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-label">Saldo contra entrega (50%)</span>
+          <span class="pricing-row-value">$4.689.300 COP</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text-light);margin-top:10px;font-family:'IBM Plex Mono',monospace;">* El valor en pesos puede ajustarse a la TRM del día de facturación.</p>
+  </div>
+
+  <!-- COSTOS ADICIONALES -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Costos adicionales a cargo del cliente</span>
+      <span class="section-rule"></span>
+    </div>
+    <p style="font-size:13px;color:var(--text-mid);margin-bottom:20px;line-height:1.65;">
+      Los siguientes costos no están incluidos en la propuesta y se pagan directamente por el cliente a cada plataforma. Se listan para que puedan presupuestarse con anticipación.
+    </p>
+
+    <div class="scope-grid">
+
+      <div class="scope-item">
+        <div class="scope-item-label">Shopify Basic</div>
+        <div class="scope-item-value">Plan recomendado para este proyecto. Cubre el catálogo, checkout nativo, integraciones y todas las funciones necesarias del brief.<br><br><strong>~$29 USD / mes</strong> · pagado directamente a Shopify.</div>
+      </div>
+
+      <div class="scope-item" style="background:var(--bg-subtle);">
+        <div class="scope-item-label">Vimeo (opcional)</div>
+        <div class="scope-item-value">Para videos en ficha de producto con autoplay silencioso y loop fluido, se recomienda alojar los videos en Vimeo. El plan gratuito tiene límites de almacenamiento.<br><br><strong>Gratis</strong> (limitado) o <strong>~$20 USD / mes</strong> en plan Pro.</div>
+      </div>
+
+      <div class="scope-item">
+        <div class="scope-item-label">Pasarela de pago</div>
+        <div class="scope-item-value">Wompi, PayU o Mercado Pago cobran comisión por transacción. No tienen costo fijo mensual pero sí un porcentaje sobre cada venta.<br><br><strong>Variable</strong> · entre 2% y 3,5% por transacción según plataforma.</div>
+      </div>
+
+    </div>
+
+    <div class="scope-grid" style="margin-top:2px;">
+      <div class="scope-item" style="grid-column:1/-1;background:var(--bg-muted);">
+        <div class="scope-item-label">Apps gratuitas recomendadas</div>
+        <div class="scope-item-value" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+          <span style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:500;">Shopify Search & Discovery — filtros de producto</span>
+          <span style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:500;">Shop Channel — gestión de pedidos</span>
+          <span style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:500;">Klaviyo o Mailchimp — newsletter discreto (gratis hasta cierto volumen)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;background:var(--bg-muted);border-color:var(--border);">
+      <div class="card-body" style="display:flex;align-items:flex-start;gap:14px;">
+        <div style="font-size:18px;margin-top:2px;">💡</div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.65;">
+          El costo mínimo mensual de operación de la tienda una vez lanzada sería aproximadamente <strong>$29 USD</strong> del plan Shopify, más las comisiones variables por venta. Todo lo demás en esta lista es opcional o gratuito.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASOS -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">Próximos pasos</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-item-label">Confirmación</div>
+            <div class="timeline-item-desc">Nos indicas que quieres proceder y se realiza el abono del 50% para dar inicio al proyecto.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-item-label">Kickoff</div>
+            <div class="timeline-item-desc">Llamada breve (máx. 30 min) para repasar referencias, accesos a Shopify y cronograma exacto.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-item-label">Diseño Figma</div>
+            <div class="timeline-item-desc">Entregamos el prototipo para revisión. Nada avanza a desarrollo sin tu aprobación.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-item-label">Desarrollo</div>
+            <div class="timeline-item-desc">Construcción de la tienda con actualizaciones en cada hito. Comunicación directa.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-item-label">Lanzamiento</div>
+            <div class="timeline-item-desc">Revisión final, ajustes, entrega de documentación y activación de analítica.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUÍA FOTOGRÁFICA -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-title">Guía de contenido visual</span>
+      <span class="section-rule"></span>
+    </div>
+    <p style="font-size:13px;color:var(--text-mid);margin-bottom:20px;line-height:1.65;">
+      La fotografía es parte del producto. Para una estética de lujo silencioso, estas son las directrices técnicas y creativas que recomendamos para el contenido visual de Diez Oficios.
+    </p>
+    <table class="photo-table">
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Recomendación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Protagonismo</td>
+          <td><span class="tag-yes">SÍ</span> El bolso ocupa el encuadre. Fondos neutros: piedra, lino, mármol mate. Sin elementos que compitan.</td>
+        </tr>
+        <tr>
+          <td>Iluminación</td>
+          <td><span class="tag-yes">SÍ</span> Luz natural o natural controlada. Lateral suave. Sombras presentes, dan volumen y autenticidad.</td>
+        </tr>
+        <tr>
+          <td>Planos de detalle</td>
+          <td><span class="tag-yes">SÍ</span> Costuras, hebillas, textura del cuero. Mínimo 1 plano de detalle por modelo. La materia justifica el precio.</td>
+        </tr>
+        <tr>
+          <td>Editorial con cuerpo</td>
+          <td><span class="tag-yes">SÍ</span> Al menos una toma por modelo en portado. Movimiento real: caminar, doblar una esquina, una mano que sujeta.</td>
+        </tr>
+        <tr>
+          <td>Video en producto</td>
+          <td><span class="tag-yes">SÍ</span> Clip de 10–20 seg por modelo. Cómo cae, cómo se comporta la correa. Sin música ni texto superpuesto.</td>
+        </tr>
+        <tr>
+          <td>Formatos</td>
+          <td>Vertical 4:5 o 3:4 para producto · Cuadrado 1:1 para detalles · 16:9 para banners y video</td>
+        </tr>
+        <tr>
+          <td>Postproducción</td>
+          <td><span class="tag-yes">SÍ</span> Temperatura de color coherente entre todos los modelos. Calibración uniforme es parte del lujo.</td>
+        </tr>
+        <tr>
+          <td>Cantidad mínima</td>
+          <td>Por modelo: 4 tomas estáticas + 1 detalle + 1 editorial + 1 video. Total aprox. <strong>36–42 piezas</strong>.</td>
+        </tr>
+        <tr>
+          <td>IA / Renders</td>
+          <td><span class="tag-no">NO</span> Imágenes generadas completamente por IA o renders artificiales. <span class="tag-yes">SÍ</span> Se permite retoque y edición con herramientas de IA sobre fotografía real.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- REQUISITOS DEL CLIENTE -->
+  <div class="section fade">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <span class="section-title">Requisitos para iniciar</span>
+      <span class="section-rule"></span>
+    </div>
+    <p style="font-size:13px;color:var(--text-mid);margin-bottom:20px;line-height:1.65;">
+      Para dar inicio al proyecto una vez confirmado el abono, necesitamos que el cliente nos provea los siguientes materiales e información.
+    </p>
+
+    <div class="scope-grid" style="grid-template-columns:1fr;">
+
+      <div class="scope-item" style="background:var(--bg-subtle);">
+        <div class="scope-item-label">Cuenta Shopify</div>
+        <div class="scope-item-value">Nombre legal de la empresa, correo electrónico para crear la cuenta, país de operación y moneda de venta (COP). La cuenta será creada por nuestro equipo.</div>
+      </div>
+
+      <div class="scope-item">
+        <div class="scope-item-label">Marca</div>
+        <div class="scope-item-value">Logo en formato vectorial (AI, SVG o PDF) y manual de marca: tipografías, paleta de colores, tono de comunicación.</div>
+      </div>
+
+      <div class="scope-item" style="background:var(--bg-subtle);">
+        <div class="scope-item-label">Productos</div>
+        <div class="scope-item-value">Fotografías y videos de los 6 modelos de bolso con sus variantes de color, nombre de cada producto, descripción y precio de venta por referencia.</div>
+      </div>
+
+      <div class="scope-item">
+        <div class="scope-item-label">Acceso al dominio y hosting</div>
+        <div class="scope-item-value">Compartir acceso al panel de administración del dominio y hosting para realizar la configuración y conexión con Shopify.</div>
+      </div>
+
+      <div class="scope-item" style="background:var(--bg-subtle);">
+        <div class="scope-item-label">Correo corporativo</div>
+        <div class="scope-item-value">Correo con dominio propio (ej. <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5d6dadbc1d4d6c1daf5d1dcd0cfdad3dcd6dcdac69bd6dad8">[email&#160;protected]</a>) para vincularlo a la tienda. Si no existe, informarlo para gestionarlo en paralelo.</div>
+      </div>
+
+      <div class="scope-item">
+        <div class="scope-item-label">Pasarela de pago</div>
+        <div class="scope-item-value">Definir la plataforma de pagos a integrar: Wompi, PayU, Mercado Pago u otra. Si aún no tienen cuenta activa, iniciar el proceso de registro antes del desarrollo.</div>
+      </div>
+
+      <div class="scope-item" style="background:var(--bg-subtle);">
+        <div class="scope-item-label">Textos del sitio</div>
+        <div class="scope-item-value">Contenido redactado para: página About, política de envíos, política de devoluciones y términos y condiciones. Podemos orientar la estructura si se necesita.</div>
+      </div>
+
+      <div class="scope-item">
+        <div class="scope-item-label">Redes sociales</div>
+        <div class="scope-item-value">Handles o URLs de Instagram, TikTok u otras redes activas de la marca para vincularlas a la tienda.</div>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top:16px;background:var(--bg-muted);border-color:var(--border);">
+      <div class="card-body" style="display:flex;align-items:flex-start;gap:14px;">
+        <div style="font-size:18px;margin-top:2px;">💡</div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.65;">
+          Entre más completos y organizados estén los materiales al inicio, más ágil y fiel al brief será el resultado final. Recomendamos tener todo listo antes del kickoff.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="footer-info">
+    <strong>Daniel Puentes</strong>
+    Diez Luxury Goods S.A.S<br>
+    Bogotá, Colombia · Abril 2026
+  </div>
+  <div class="footer-note">
+    Esta propuesta tiene una vigencia de 30 días calendario desde la fecha de emisión.
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+      
+</body>
+</html>
